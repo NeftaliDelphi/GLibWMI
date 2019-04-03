@@ -2,7 +2,7 @@ unit UMainDemoBIOS;
 
 interface
 
-{$I .\..\package\jedi.inc}
+{$I .\..\..\package\jedi.inc}
 
 uses
   {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}

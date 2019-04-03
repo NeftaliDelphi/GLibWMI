@@ -748,9 +748,9 @@ BEGIN
 	System_SysConst_SIntOverflow,	L"Integer overflow"
 END
 
-/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Controls.res */
+/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\controls.res */
 /* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Buttons.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\DCUs\FormAbout.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\BIOSdemo\UMainDemoBIOS.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\BIOSdemo\TestBiosInfo.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\BIOSdemo\TestBiosInfo.drf */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\DCUs\FormAbout.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\BIOSdemo\UMainDemoBIOS.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\BIOSdemo\TestBiosInfo.res */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\BIOSdemo\TestBiosInfo.drf */

@@ -2,7 +2,7 @@ unit UMainDemoDiskDrive;
 
 interface
 
-{$I .\..\package\jedi.inc}
+{$I .\..\..\package\jedi.inc}
 
 uses
   {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
@@ -155,7 +155,7 @@ end;
 
 procedure TFormMainDiskDrive.CMAfterShow(var Msg: TMessage);
 var
-  i,j:Integer;
+  i:Integer;
   fr:TFrInfo;
 begin
 

@@ -786,10 +786,10 @@ BEGIN
 	System_SysConst_SDiskFull,	L"Disk full"
 END
 
-/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Controls.res */
-/* d:\proyectos\delphi\glibwmi\dcus\FormAbout.dfm */
+/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\controls.res */
+/* f:\proyectos-\delphi\glibwmi_2.2b\dcus\FormAbout.dfm */
 /* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Buttons.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WinProcess\FAbout.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WinProcess\FMain.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WinProcess\VProcess.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WinProcess\VProcess.drf */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WinProcess\FAbout.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WinProcess\FMain.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WinProcess\VProcess.res */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WinProcess\VProcess.drf */

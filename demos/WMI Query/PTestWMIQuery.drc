@@ -770,9 +770,9 @@ BEGIN
 	System_SysConst_SRangeError,	L"Range check error"
 END
 
-/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Controls.res */
+/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\controls.res */
 /* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Buttons.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\sources\FormAbout.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WMI Query\FMain.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WMI Query\PTestWMIQuery.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\WMI Query\PTestWMIQuery.drf */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\sources\FormAbout.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WMI Query\FMain.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WMI Query\PTestWMIQuery.res */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\WMI Query\PTestWMIQuery.drf */

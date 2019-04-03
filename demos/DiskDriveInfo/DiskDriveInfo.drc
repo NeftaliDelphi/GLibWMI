@@ -766,10 +766,10 @@ BEGIN
 	System_SysConst_SRangeError,	L"Range check error"
 END
 
-/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Controls.res */
+/* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\controls.res */
 /* c:\program files (x86)\embarcadero\studio\19.0\lib\Win32\release\Buttons.res */
-/* d:\proyectos\delphi\glibwmi\dcus\FormAbout.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\DiskDriveInfo\FrameInfo.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\DiskDriveInfo\UMainDemoDiskDrive.dfm */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\DiskDriveInfo\DiskDriveInfo.res */
-/* D:\PROYECTOS\DELPHI\GLibWMI\demos\DiskDriveInfo\DiskDriveInfo.drf */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\sources\FormAbout.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\DiskDriveInfo\FrameInfo.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\DiskDriveInfo\UMainDemoDiskDrive.dfm */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\DiskDriveInfo\DiskDriveInfo.res */
+/* F:\Proyectos-\Delphi\GLibWMI_2.2b\demos\DiskDriveInfo\DiskDriveInfo.drf */

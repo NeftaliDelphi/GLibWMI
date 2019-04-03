@@ -4,7 +4,7 @@
         <MainSource>DiskDriveInfo.dpr</MainSource>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <ProjectVersion>18.3</ProjectVersion>
+        <ProjectVersion>18.4</ProjectVersion>
         <Base>True</Base>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -93,6 +93,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
+        <DCC_UnitSearchPath>.\..\..\sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -154,6 +158,50 @@
                     <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclib250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclib250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\ibmonitor250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\ibmonitor250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclIntraweb_140_250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclIntraweb_140_250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclemsclient250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclemsclient250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclemsclientfiredac250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclemsclientfiredac250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclemsedge250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclemsedge250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclemsserver250.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\dclemsserver250.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinCaramelRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinCaramelRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinCoffeeRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinCoffeeRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinFoggyRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinFoggyRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinGlassOceansRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinGlassOceansRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinHighContrastRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinHighContrastRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkiniMaginaryRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkiniMaginaryRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLilianRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLilianRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLiquidSkyRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLiquidSkyRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLondonLiquidSkyRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinLondonLiquidSkyRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMcSkinRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMcSkinRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMetropolisDarkRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMetropolisDarkRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMetropolisRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMetropolisRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMoneyTwinsRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinMoneyTwinsRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007BlackRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007BlackRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007BlueRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007BlueRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007GreenRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2007GreenRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2010BlueRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2010BlueRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2010SilverRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2010SilverRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2013LightGrayRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2013LightGrayRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2013WhiteRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2013WhiteRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2016ColorfulRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinOffice2016ColorfulRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSharpPlusRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSharpPlusRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSharpRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSharpRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSilverRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSilverRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSpringTimeRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSpringTimeRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinStardustRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinStardustRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSummer2008RS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinSummer2008RS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinTheAsphaltWorldRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinTheAsphaltWorldRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinTheBezierRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinTheBezierRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinValentineRS25.bpl">File C:\Program Files (x86)\DevExpress VCL\Library\RS25\dxSkinValentineRS25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\TSVNWizardProj.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\TSVNWizardProj.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\DMVC_IDE_Expert_D102Tokyo.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\DMVC_IDE_Expert_D102Tokyo.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\LOCAL\COMPONENTES\DevExpress\18.1.2\Library\RS25\dclcxPivotGridOLAPRS25.bpl">ExpressPivotGrid OLAP by Developer Express Inc.</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Win32">True</Platform>

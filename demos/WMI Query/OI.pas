@@ -851,7 +851,7 @@ end;
 
 procedure TMObjectInspector.ModifyMethodProperty;
 var
-  Obj, New: TObject;
+  Obj: TObject;
   t :ptypedata;
 begin
   Obj:=TObject(GetOrdProp(Self.FObject, PropInfo));
