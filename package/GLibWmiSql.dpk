@@ -1,0 +1,40 @@
+package GLibWmiSql;
+
+{$R *.res}
+{$R 'GLibWMISQLRes.res'}
+{$R '..\sources\WbemScripting_TLB.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'GLibWMISQL Sentencias sobre Windows Management Instrumentation'}
+{$IMPLICITBUILD OFF}
+
+requires
+  designide,
+  rtl,
+  vcl,
+  GLibWMI;
+
+contains
+  CWMISQL in '..\sources\CWMISQL.pas',
+  URegisterSQLComp in '..\sources\URegisterSQLComp.pas';
+
+end.

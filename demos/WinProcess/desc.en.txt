@@ -1,0 +1,10 @@
+Tool to view/explore the running processes on the computer. In main windows displays basic information about de process (icon, title, identifier, threads, description, priority, execution path, ...). Tou can access detailled process information on Details Window:
+* CommandLine
+* CreationClassName
+* Description
+* Executable Path
+* Handle, HandleCount
+* Install date
+* ProcessName, ProcessID
+* Priority
+* ... 

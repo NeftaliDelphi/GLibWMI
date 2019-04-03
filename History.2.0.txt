@@ -1,0 +1,33 @@
+GLibWMI Component Library 
+
+Historial de la versión 2.0b
+01/08/2013
+===========================================================
+
+* Soporte para Delphi XE, XE2, XE3, XE4 y XE5.
+
+* Nuevos componentes: 
+--------------------------
++ BootConfigurationInfo: Componente para acceder a la configuración de “boot” de un ordenador que ejecuta un sistema Windows.
++ CDROMDriveInfo: Permite acceder a la información de una unidad de CD-ROM existente en un ordenador con Windows. 
++ CodecFileInfo: Permite acceder a la información de todos los codecs (compres/decompress) de audio o video instalados en el equipo.
++ DesktopInfo: Permite acceder a las características comunes de escritorio de un usuario. Las propiedades de esta clase pueden ser modificados por el usuario para personalizar el escritorio.
++ RegistryInfo: Permite acceder a las propiedades de la clase que representa al registro de windows de la máquina.
++ TimeZoneInfo: Componente para acceder a la clase Win32_TimeZone, que representa la información de zona horaria para un ordenador con Windows, que incluye los cambios necesarios para realizar la transición entre cambios horarios.
++ Componente SQL : Componente para acceder de forma genérica a las propiedades de WMI.
+
+* Añadidas demos de los componentes y modificada la demo general.
+--------------------------------------------------------------------
+Se ha añadido lo necesario para que la librería funcione correctamente en versiones posteriores a Delphi XE2. Incluida la próxima XE5.
+Se han añadido nuevas propiedades al componente NetworkAdapterInfo.
+Corregidos errores menores en el componentes ProcessInfo.
+
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+German_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+

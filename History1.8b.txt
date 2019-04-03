@@ -1,0 +1,65 @@
+GLibWMI Component Library 
+Historial de la versión 1.8b
+23/01/2010
+===========================================================
+
+
+Añadidos nuevos componentes a esta versión:
+New components at this version:
+
++ CPrintJobInfo: 
+---------------------
+Representa un job de impresión generado por una aplicación Windows. 
+Represent a print job generatyed by Windows Application.
+
++ CUSBControllerInfo: 
+---------------------
+Representa la clase para manejar las capacidades del Universal Serial Bus (USB).
+Class for manage capabilities of Universal Serial Bus (USB).
+
++ CDiskPartitionInfo: 
+---------------------
+Representa las características de las particiones creadas sobre un disco 
+físico en un sistema Windows.
+Represents the capabilities and management capacity of a partitioned area 
+of a physical disk on a computer system running Windows
+											
++ CEnvironmentInfo: 
+---------------------
+Representa un entorno o entorno de sistema en un ordenador con Windows.
+represents an environment or system environment setting on a Windows computer system.
+
+
+
+Otros/Others:
+Corregido error al acceder a las propiedades (algunos componentes).
+Corrected bug on access string properties (some components)
+
+Corrected bug; Delphi2009 returned some empty properties (internally with value).
+Corregido; En delphi 2009 algunas propiedades retoirnaban valor vacío, cuando sí tenían valor. 
+
+Corregido error al acceder a la información de un componente si la consulta a WMI devolvía vacía.
+Corrected bug on access component information if the query returned an empty set.
+
+CComputerSystemInfo; 
+Error al acceder a la propiedad OEMLogoBitmap, que provocaba que 
+"saltaran" erores al consultarla.
+Error on access OEMLogoBitmap property.
+
+
+Corregido error de pérdida de memoria al acceder a las propiedades.
+Corrected memory leaks on examine objects properties.
+(Thakns DrKiroCorp)
+
+
+P.D: Excuse-me for my bad english. It's not my natural language.
+
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+German_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+

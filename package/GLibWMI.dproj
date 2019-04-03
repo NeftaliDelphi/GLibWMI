@@ -1,0 +1,271 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1ABE80AC-FEC6-42D6-B6E9-4892D820846B}</ProjectGuid>
+        <MainSource>GLibWMI.dpk</MainSource>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>16.0</ProjectVersion>
+        <Base>True</Base>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice' and '$(Base)'=='true') or '$(Base_iOSDevice)'!=''">
+        <Base_iOSDevice>true</Base_iOSDevice>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Base)'=='true') or '$(Base_iOSSimulator)'!=''">
+        <Base_iOSSimulator>true</Base_iOSSimulator>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Keys>CompanyName=Neftalí -Germán Estévez-;FileDescription=GLib para Windows Management Instrumentation;FileVersion=1.3.0.20;InternalName=GLibWMI;LegalCopyright=Neftalí -Germán Estévez-;LegalTrademarks=Neftalí -Germán Estévez-;OriginalFilename=GLib para Windows Management Instrumentation;ProductName=GLib para Windows Management Instrumentation;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>3082</VerInfo_Locale>
+        <VerInfo_PreRelease>true</VerInfo_PreRelease>
+        <VerInfo_Build>20</VerInfo_Build>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <SanitizedProjectName>GLibWMI</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DependencyCheckOutputName>..\..\__GLibWMI__\DCUs\GLibWMI.bpl</DCC_DependencyCheckOutputName>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_UnitSearchPath>.\..\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <GenPackage>true</GenPackage>
+        <GenDll>true</GenDll>
+        <DCC_FullBooleanEvaluations>true</DCC_FullBooleanEvaluations>
+        <DCC_BplOutput>.\..\DCUs</DCC_BplOutput>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Description>GLibWMI para Windows Management Instrumentation</DCC_Description>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <DCC_DcpOutput>.\..\DCUs</DCC_DcpOutput>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+        <DCC_DcuOutput>.\..\DCUs</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice)'!=''">
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimulator)'!=''">
+        <DCC_UsePackage>rtl;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_DcuOutput>.\..\DCUs</DCC_DcuOutput>
+        <VerInfo_Build>0</VerInfo_Build>
+        <DCC_BplOutput>.\..\DCUs</DCC_BplOutput>
+        <DCC_UnitSearchPath>.\..\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DcpOutput>.\..\DCUs</DCC_DcpOutput>
+        <DCC_UsePackage>rtl;vcl;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Icon_MainIcon>GLibWMI_Icon2.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>rtl;vcl;$(DCC_UsePackage)</DCC_UsePackage>
+        <Icon_MainIcon>GLibWMI_Icon2.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Build>0</VerInfo_Build>
+        <DCC_DcpOutput>.\..\DCUs</DCC_DcpOutput>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=Neftalí -Germán Estévez-;FileDescription=GLib para Windows Management Instrumentation;FileVersion=2.1.0.0;InternalName=GLibWMI;LegalCopyright=Neftalí -Germán Estévez-;LegalTrademarks=Neftalí -Germán Estévez-;OriginalFilename=GLib para Windows Management Instrumentation;ProductName=GLib para Windows Management Instrumentation;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>0</VerInfo_Build>
+        <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_DcuOutput>.\..\dcus\</DCC_DcuOutput>
+        <DCC_ObjOutput>c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\dcus\</DCC_ObjOutput>
+        <DCC_HppOutput>c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\dcus\</DCC_HppOutput>
+        <DCC_ResourcePath>c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\dcus;c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\ExpressDataController\Sources\;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\dcus;c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\ExpressDataController\Sources\;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\dcus;c:\Archivos de programa\Borland\Delphi6\Tools\Developer Express Inc\ExpressDataController\Sources\;$(DCC_IncludePath)</DCC_IncludePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_DcuOutput>.\..\dcus\</DCC_DcuOutput>
+        <DCC_BplOutput>.\..\DCUs</DCC_BplOutput>
+        <DCC_DcpOutput>.\..\DCUs</DCC_DcpOutput>
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="GLibWMIRes.res"/>
+        <DCCReference Include="designide.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\Sources\CBiosInfo.pas"/>
+        <DCCReference Include="..\Sources\CWMIBase.pas"/>
+        <DCCReference Include="..\Sources\UConstantes.pas"/>
+        <DCCReference Include="..\Sources\UProcedures.pas"/>
+        <DCCReference Include="..\Sources\URegisterComps.pas"/>
+        <DCCReference Include="..\Sources\UTAboutProp.pas"/>
+        <DCCReference Include="..\Sources\WbemScripting_TLB.pas"/>
+        <DCCReference Include="..\Sources\UTypes.pas"/>
+        <DCCReference Include="..\Sources\CDisplayInfo.pas"/>
+        <DCCReference Include="..\Sources\CDiskDriveInfo.pas"/>
+        <DCCReference Include="..\Sources\CProcessorInfo.pas"/>
+        <DCCReference Include="..\Sources\CBatteryInfo.pas"/>
+        <DCCReference Include="..\Sources\CCDROMDriveInfo.pas"/>
+        <DCCReference Include="..\Sources\CKeyboardInfo.pas"/>
+        <DCCReference Include="..\Sources\COperatingSystemInfo.pas"/>
+        <DCCReference Include="..\Sources\CPhysicalMemoryInfo.pas"/>
+        <DCCReference Include="..\Sources\CPointingDeviceInfo.pas"/>
+        <DCCReference Include="..\Sources\CPrinterInfo.pas"/>
+        <DCCReference Include="..\Sources\CSoundDeviceInfo.pas"/>
+        <DCCReference Include="..\Sources\FormAbout.pas">
+            <Form>FAbout</Form>
+        </DCCReference>
+        <DCCReference Include="..\Sources\CProcessInfo.pas"/>
+        <DCCReference Include="..\Sources\CServiceInfo.pas"/>
+        <DCCReference Include="..\Sources\CDesktopMonitorInfo.pas"/>
+        <DCCReference Include="..\Sources\CComputerSystemInfo.pas"/>
+        <DCCReference Include="..\Sources\CStartupCommandInfo.pas"/>
+        <DCCReference Include="..\Sources\CNetworkAdapterInfo.pas"/>
+        <DCCReference Include="..\Sources\CShareInfo.pas"/>
+        <DCCReference Include="..\sources\CUserAccountInfo.pas"/>
+        <DCCReference Include="..\sources\CPrintJobInfo.pas"/>
+        <DCCReference Include="..\sources\CUSBControllerInfo.pas"/>
+        <DCCReference Include="..\sources\CDiskPartitionInfo.pas"/>
+        <DCCReference Include="..\sources\CEnvironmentInfo.pas"/>
+        <DCCReference Include="..\Sources\CWMISQL.pas"/>
+        <DCCReference Include="..\demos\Generic\FrComponent.pas">
+            <Form>FrameComponent</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">GLibWMI.dpk</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">3</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">20</VersionInfo>
+                    <VersionInfo Name="Debug">True</VersionInfo>
+                    <VersionInfo Name="PreRelease">True</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">3082</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">Neftalí -Germán Estévez-</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">GLib para Windows Management Instrumentation</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">1.3.0.20</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">GLibWMI</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright">Neftalí -Germán Estévez-</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks">Neftalí -Germán Estévez-</VersionInfoKeys>
+                    <VersionInfoKeys Name="OriginalFilename">GLib para Windows Management Instrumentation</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">GLib para Windows Management Instrumentation</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k210.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp210.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="iOSDevice">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

@@ -1,0 +1,23 @@
+GLibWMI Component Library 
+
+Historial de la versión 2.2
+02/04/2019
+===========================================================
+
+* Compilación probada para Delphi 10.2 (Tokio). En versiones anteriores debe funcionar sin problemas.
+
+* Eliminados Hints y Warnings en los de componentes.
+* Eliminados Hints y Warning en los ejemplos .
+* Se añaden Units a los uses necesarias para versiones nuevas.
+* Se añade fichero incluyendo directivas de compilación.
+* Se generan packages para las nuevas versiones de delphi.
+
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+german_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+

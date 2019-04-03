@@ -1,0 +1,16 @@
+GLibWMI Component Library 1.8beta
+===========================================================
+
+INSTALAR / INSTALL
+=======================
+
+1) Instala la BPL que hay en el directorio de Lib para tu version de Dlephi:
+ 	 Install the BPL for your Dephi version located in Lib directory:
+
+
+2) Abre las demos y compilalas.
+   Open the demo prjects and compile it.
+
+NOTA: Tal vez te haga falta añadir al path de las librerías al path de busqueda
+			Maybe you do need to add the path of libraries to search path
+			

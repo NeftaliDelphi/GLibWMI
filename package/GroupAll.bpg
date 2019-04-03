@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = GLibWMI.bpl PGenericTest.exe TestBiosInfo.exe DiskDriveInfo.exe \
+  ProcessorInfo.exe ServiceControl.exe DemoSystemInfo.exe DemoTest.exe \
+  PGenericInfo.exe ProcessList.exe VProcess.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+GLibWMI.bpl: GLibWMI.dpk
+  $(DCC)
+
+PGenericTest.exe: ..\Demos\Generic\PGenericTest.dpr
+  $(DCC)
+
+TestBiosInfo.exe: ..\demos\BIOSdemo\TestBiosInfo.dpr
+  $(DCC)
+
+DiskDriveInfo.exe: ..\demos\DiskDriveInfo\DiskDriveInfo.dpr
+  $(DCC)
+
+ProcessorInfo.exe: ..\demos\ProcessorInfo\ProcessorInfo.dpr
+  $(DCC)
+
+ServiceControl.exe: ..\demos\ServiceControl\ServiceControl.dpr
+  $(DCC)
+
+DemoSystemInfo.exe: ..\demos\Demo1\DemoSystemInfo.dpr
+  $(DCC)
+
+DemoTest.exe: ..\demos\TestMethods\DemoTest.dpr
+  $(DCC)
+
+PGenericInfo.exe: ..\demos\GenericInfoWMI\PGenericInfo.dpr
+  $(DCC)
+
+ProcessList.exe: ..\demos\ProccessList\ProcessList.dpr
+  $(DCC)
+
+VProcess.exe: ..\demos\WinProcess\VProcess.dpr
+  $(DCC)
+
+

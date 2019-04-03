@@ -1,0 +1,28 @@
+GLibWMI Component Library 
+
+Historial de la versión 2.1b
+01/08/2013
+===========================================================
+
+* Compilación probada para XE7. En versiones anteriores debe funcionar sin problemas.
+
+* Añadida la propiedad LocalAccount
+(Emilio perez)
+"Esto es debido a que, al querer obtener una información local, este servidor me buscaba toda la información de todo su Active Directory, lo que hacía que tardara bastante. Pero me surgió un problema, en servidores windows 2000 no se puede usar LocalAccount, así pues, tuve que crear una propiedad booleana que, si la activaba, pues me lo hacía con este filtrado."
+
+
+
+
+
+
+
+
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+German_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+

@@ -1,0 +1,62 @@
+VProcess   1.1
+Visualizador de procesos en ejecución
+By Neftalí -Germán Estévez-  2010
+------------------------------------------------------------
+
+Aplicación para la visualización de procesos en ejecuión.
+Para ella se ha utilizado la librería de componentes GlibWMI
+http://neftali.clubdelphi.com/?p=589
+(sourceforge)
+https://sourceforge.net/projects/glibwmi/
+
+Y los componentes de exportación de Max: mxExports
+
+El código fuente es libre y puedes encontrarlo en la página del autor
+o como parte de los ejemplos de la librería GLibWMI.
+
+
+HISTORIAL
+=========================
+
+Version 1.1
+
+* Corrección de bugs menores
+* Añadido multiidioma; Spanish, Inglés y Francés.
+Utilizando GnuGetText (http://neftali.clubdelphi.com/?p=688)
+* Añadir la opción de sustituir al Administrador de tareas por defecto de Windows.
+* Cuadro inicial de mensaje.
+* Añadir botones de acciones al menú.
+* Opción de ejecutar nuevas aplicaciones.
+* Opción de terminar un proceso que se está ejecutando....
+* Exportación sin necesidad de instalar ningún componente (mxExports).
+* Guardar opciones sin necesidad de instalar componentes (RxLib).
+* Permite cerrar/Ejecutar nuevos procesos.
+
+
+
+
+  
+LICENCIA
+=========================
+Esta aplicación es un programa gratuíto. Puedes y utilizarlo sin
+restricciones. Si deseas cambiar el código fuente para incrementar sus
+funcionalidades o corregir posibles errores, por favor, envíame el
+nuevo código con los cambios realizados para que yo pueda revisarlo y
+añadirlo al componente si lo creo conveniente. Si añades nuevo código,
+por favor coméntalo (al igual que el existente) y envíame tu nombre y
+email. Lo único que NO DEBES CAMBIAR es la INFORMACIÓN DE LICENCIA
+ORGINAL.
+
+
+AVISO
+==========================
+El programa se proporciona "TAL CUAL". Sin ninguna
+garantía de ninguna clase, expresa o implicada. El riesgo en cuanto a
+la calidad y el funcionamiento del software es suyo. El autor no es
+obligado de ninguna manera a resposabilizarse de los DAÑOS resultantes
+del uso y/o uso erróneo del componente, especialmente por para los
+DAÑOS causados POR CUALQUIER VERSIÓN QUE NO HAYA SIDO PROGRAMADA POR
+EL MISMO AUTOR.
+
+
+
