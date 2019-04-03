@@ -12,3 +12,5 @@ Están basados en la WMI de Windows (Windows Management Instrumentation).
 
 BiosInfo, PrinterInfo, DiskInfo,... permiten acceder a las clases de WMI: WIN32_Bios, WIN32_Printers, WIN32_DiskDrive. En total más de 20 componentes para acceder a gran cantidad de información del sistema.
 Simple, sueltalo y actívalo.
+
+<img src=http://neftali.clubdelphi.com/wp-content/uploads/Captura_2019-04-03-12_01_14_thumb.png>
