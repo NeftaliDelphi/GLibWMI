@@ -1,16 +1,26 @@
 # GLibWMI
+
+## DESCRIPCIÓN
+
 ### (English)  
 GLibWMI is a Delphi library of components, focused on the Administration of Windows Systems. 
 They are based on Windows WMI (Windows Management Instrumentation). 
-Simple, Drop and Active it.
 
 ### (Spanish)  
 GLibWMI es una librería/biblioteca de componentes para Delphi, enfocados a la Administración de Sistemas Windows. 
 Están basados en la WMI de Windows (Windows Management Instrumentation).  
-Simple, sueltalo y actívalo.
 
-## Lista de componentes de la librería
+## CÓMO UTILIZAR LOS COMPONENTES.
+(ES) Una vez instalada la librería, suelte el componente en un formulario y actívelo.
+(En) Once the library is installed, drop the component on a form and activate it.
 
+
+## LISTA DE COMPONENTES
+Los componentes se instalan en la paleta de componentes dividivos en 2 categorías (Software y Hardware).
+
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/componentes_libreria.png> 
+
+A continuación hay una descripción básica de la funcionalidad de cada uno de los componentes.
 
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/CBIOSInfo.jpg> 
 - TBIOSInfo: La clase Win32_BIOS representa los atributos del servicio de entrada y salida básico del sistema (BIOS, Basic Input/Output Service) instalado en el equipo.
@@ -220,6 +230,9 @@ https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-bootconfigurat
 https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-displayconfiguration
 
 
+## DEMOS Y EJEMPLOS
+Con la librería s uincluyen varias demos y ejemplos de utilización de los diferentes componentes que la componen.
 
+<b>Demo general</b>: Que muestra una visión genérica de todos los componentes.
 
 <img src=http://neftali.clubdelphi.com/wp-content/uploads/Captura_2019-04-03-12_01_14_thumb.png>
