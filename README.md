@@ -241,4 +241,11 @@ Con la librería s uincluyen varias demos y ejemplos de utilización de los dife
 <b>BiosDemo, DiskDriveInfo, ProcessorInfo</b>: Demos para mostrar información de la Bios del sistema, de los discos instalador en el equipo y del procesador de la máquina.
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/ejemplos_libreria.png>
 
+<b>WinProcess</b>: Ejemplo que muestra una lista de losprocesos actvos en el sistema.
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/lista_procesos.png>
+
+<b>PrinterList</b>: Muestra las diferentes impresoras instaladas en el sistema y las características de cada una de ellas.
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/PrinterList.gif>
+
+
 
