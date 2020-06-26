@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = PPrinterList.exe GLibWMI.bpl SysInfo.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+PPrinterList.exe: ..\demos\ListaImpresoras\PPrinterList.dpr
+  $(DCC)
+
+GLibWMI.bpl: GLibWMI.dpk
+  $(DCC)
+
+SysInfo.exe: ..\demos\System Info\SysInfo.dpr
+  $(DCC)
+
+

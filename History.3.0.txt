@@ -1,0 +1,32 @@
+GLibWMI Component Library 
+
+Historial de la versión 3.0
+01/07/2020
+===========================================================
+
+* Soporte para Delphi6, Delphi7,... Delphi XE, XE2, XE3, XE4, XE5 ... Delphi 10.4 
+
+* Reescrito todo el código completo de los componentes.
+* Se añade documentación a las propiedades y métodos de los componentes.
+* Nuevos Iconos para los componentes.
+* Se distribuyen los componentes en la paleta en 2 categorías (software y Hardware).
+* Añadidas demos de los componentes y modificada la demo general.
+
+
+* Nuevos componentes de la versión 3.0: 
+-----------------------------------------
+  + PnpEntityInfo	
+  + FanInfo
+  + ProductInfo
+  + VideoControllerInfo
+  + DisplayInfo pasa a ser DisplayconfigurationInfo
+
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+german_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+

@@ -1,0 +1,49 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = GLibWMI.bpl TestBiosInfo.exe DiskDriveInfo.exe ProcessorInfo.exe \
+  VProcess.exe ServiceControl.exe PGenericTest.exe PPrinterList.exe SysInfo.exe \
+  OSInfo.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+TestBiosInfo.exe: BIOSdemo\TestBiosInfo.dpr
+  $(DCC)
+
+DiskDriveInfo.exe: DiskDriveInfo\DiskDriveInfo.dpr
+  $(DCC)
+
+ProcessorInfo.exe: ProcessorInfo\ProcessorInfo.dpr
+  $(DCC)
+
+VProcess.exe: WinProcess\VProcess.dpr
+  $(DCC)
+
+ServiceControl.exe: ServiceControl\ServiceControl.dpr
+  $(DCC)
+
+PGenericTest.exe: generic\PGenericTest.dpr
+  $(DCC)
+
+GLibWMI.bpl: ..\package\GLibWMI.dpk
+  $(DCC)
+
+PPrinterList.exe: ListaImpresoras\PPrinterList.dpr
+  $(DCC)
+
+SysInfo.exe: System Info\SysInfo.dpr
+  $(DCC)
+
+OSInfo.exe: Info version Windows\OSInfo.dpr
+  $(DCC)
+
+

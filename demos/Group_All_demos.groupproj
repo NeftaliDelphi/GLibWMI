@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{31169140-FDCC-44BF-995A-84CA6D0EA77D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BIOSdemo\TestBiosInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DiskDriveInfo\DiskDriveInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ProcessorInfo\ProcessorInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WinProcess\VProcess.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ServiceControl\ServiceControl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="generic\PGenericTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ListaImpresoras\PPrinterList.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Info version Windows\OSInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="System Info\SysInfo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestBiosInfo">
+        <MSBuild Projects="BIOSdemo\TestBiosInfo.dproj"/>
+    </Target>
+    <Target Name="TestBiosInfo:Clean">
+        <MSBuild Projects="BIOSdemo\TestBiosInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBiosInfo:Make">
+        <MSBuild Projects="BIOSdemo\TestBiosInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DiskDriveInfo">
+        <MSBuild Projects="DiskDriveInfo\DiskDriveInfo.dproj"/>
+    </Target>
+    <Target Name="DiskDriveInfo:Clean">
+        <MSBuild Projects="DiskDriveInfo\DiskDriveInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DiskDriveInfo:Make">
+        <MSBuild Projects="DiskDriveInfo\DiskDriveInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProcessorInfo">
+        <MSBuild Projects="ProcessorInfo\ProcessorInfo.dproj"/>
+    </Target>
+    <Target Name="ProcessorInfo:Clean">
+        <MSBuild Projects="ProcessorInfo\ProcessorInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProcessorInfo:Make">
+        <MSBuild Projects="ProcessorInfo\ProcessorInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VProcess">
+        <MSBuild Projects="WinProcess\VProcess.dproj"/>
+    </Target>
+    <Target Name="VProcess:Clean">
+        <MSBuild Projects="WinProcess\VProcess.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VProcess:Make">
+        <MSBuild Projects="WinProcess\VProcess.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServiceControl">
+        <MSBuild Projects="ServiceControl\ServiceControl.dproj"/>
+    </Target>
+    <Target Name="ServiceControl:Clean">
+        <MSBuild Projects="ServiceControl\ServiceControl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServiceControl:Make">
+        <MSBuild Projects="ServiceControl\ServiceControl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PGenericTest">
+        <MSBuild Projects="generic\PGenericTest.dproj"/>
+    </Target>
+    <Target Name="PGenericTest:Clean">
+        <MSBuild Projects="generic\PGenericTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PGenericTest:Make">
+        <MSBuild Projects="generic\PGenericTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PPrinterList">
+        <MSBuild Projects="ListaImpresoras\PPrinterList.dproj"/>
+    </Target>
+    <Target Name="PPrinterList:Clean">
+        <MSBuild Projects="ListaImpresoras\PPrinterList.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PPrinterList:Make">
+        <MSBuild Projects="ListaImpresoras\PPrinterList.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OSInfo">
+        <MSBuild Projects="Info version Windows\OSInfo.dproj"/>
+    </Target>
+    <Target Name="OSInfo:Clean">
+        <MSBuild Projects="Info version Windows\OSInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OSInfo:Make">
+        <MSBuild Projects="Info version Windows\OSInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SysInfo">
+        <MSBuild Projects="System Info\SysInfo.dproj"/>
+    </Target>
+    <Target Name="SysInfo:Clean">
+        <MSBuild Projects="System Info\SysInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SysInfo:Make">
+        <MSBuild Projects="System Info\SysInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestBiosInfo;DiskDriveInfo;ProcessorInfo;VProcess;ServiceControl;PGenericTest;PPrinterList;OSInfo;SysInfo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestBiosInfo:Clean;DiskDriveInfo:Clean;ProcessorInfo:Clean;VProcess:Clean;ServiceControl:Clean;PGenericTest:Clean;PPrinterList:Clean;OSInfo:Clean;SysInfo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestBiosInfo:Make;DiskDriveInfo:Make;ProcessorInfo:Make;VProcess:Make;ServiceControl:Make;PGenericTest:Make;PPrinterList:Make;OSInfo:Make;SysInfo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
