@@ -234,5 +234,9 @@ https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-displayconfigu
 Con la librería s uincluyen varias demos y ejemplos de utilización de los diferentes componentes que la componen.
 
 <b>Demo general</b>: Que muestra una visión genérica de todos los componentes.
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/imagen_libreria1.png>
 
-<img src=http://neftali.clubdelphi.com/wp-content/uploads/Captura_2019-04-03-12_01_14_thumb.png>
+<b>BiosDemo, DiskDriveInfo, ProcessorInfo</b>: Demos para mostrar información de la Bios del sistema, de los discos instalador en el equipo y del procesador de la máquina.
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/ejemplos_libreria.png>
+
+
