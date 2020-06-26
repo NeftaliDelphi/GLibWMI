@@ -235,15 +235,19 @@ MSDN link: https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-dis
 
 
 ## DEMOS Y EJEMPLOS
-Con la librería s uincluyen varias demos y ejemplos de utilización de los diferentes componentes que la componen.
+(ES) Con la librería s uincluyen varias demos y ejemplos de utilización de los diferentes componentes que la componen.
+(EN) The library includes several demonstrations and examples of use of the different components that compose it.
 
-<b>Demo general</b>: Que muestra una visión genérica de todos los componentes.
+<b>Demo general</b>: (ES) Que muestra una visión genérica de todos los componentes.
+<b>Demo general</b>: (EN) It shows a generic view of all the components.
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/imagen_libreria1.png>
 
-<b>BiosDemo, DiskDriveInfo, ProcessorInfo</b>: Demos para mostrar información de la Bios del sistema, de los discos instalador en el equipo y del procesador de la máquina.
+<b>BiosDemo, DiskDriveInfo, ProcessorInfo</b>: (ES) Demos para mostrar información de la Bios del sistema, de los discos instalados en el equipo y del procesador de la máquina.
+(EN) Demos to display information about the system's Bios, the hard disk installed on system and the processor of the machine.
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/ejemplos_libreria.png>
 
-<b>WinProcess</b>: Ejemplo que muestra una lista de losprocesos actvos en el sistema.
+<b>WinProcess</b>: (ES) jemplo que muestra una lista de los procesos activos en el sistema.
+(EN) Example showing a list of the active processes in the system.
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/lista_procesos.png>
 
 <b>PrinterList</b>: Muestra las diferentes impresoras instaladas en el sistema y las características de cada una de ellas.
