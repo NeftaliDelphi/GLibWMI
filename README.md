@@ -10,6 +10,8 @@ They are based on Windows WMI (Windows Management Instrumentation).
 GLibWMI es una librería/biblioteca de componentes para Delphi, enfocados a la Administración de Sistemas Windows. 
 Están basados en la WMI de Windows (Windows Management Instrumentation).  
 
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/imagen_libreria2.png> 
+
 ## CÓMO UTILIZAR LOS COMPONENTES.
 (ES) Una vez instalada la librería, suelte el componente en un formulario y actívelo.
 (En) Once the library is installed, drop the component on a form and activate it.
