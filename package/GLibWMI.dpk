@@ -25,11 +25,18 @@ package GLibWMI;
 {$WRITEABLECONST ON}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
+{$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
-{$DESCRIPTION 'GLibWMI para Windows Management Instrumentation'}
+{$DESCRIPTION 'GLibWMI for Windows Management Instrumentation'}
 {$IMPLICITBUILD OFF}
 
+{$I .\..\package\jedi.inc}
+
 requires
+  {$IFDEF DELPHIX_TOKYO_UP}
+  {$ELSE}
+  vcljpg,
+  {$ENDIF}
   designide,
   vcl,
   rtl;
@@ -41,9 +48,7 @@ contains
   UProcedures in '..\Sources\UProcedures.pas',
   URegisterComps in '..\Sources\URegisterComps.pas',
   UTAboutProp in '..\Sources\UTAboutProp.pas',
-  WbemScripting_TLB in '..\Sources\WbemScripting_TLB.pas',
   UTypes in '..\Sources\UTypes.pas',
-  CDisplayInfo in '..\Sources\CDisplayInfo.pas',
   CDiskDriveInfo in '..\Sources\CDiskDriveInfo.pas',
   CProcessorInfo in '..\Sources\CProcessorInfo.pas',
   CBatteryInfo in '..\Sources\CBatteryInfo.pas',
@@ -55,7 +60,6 @@ contains
   CPrinterInfo in '..\Sources\CPrinterInfo.pas',
   CSoundDeviceInfo in '..\Sources\CSoundDeviceInfo.pas',
   FormAbout in '..\Sources\FormAbout.pas' {FAbout},
-  CProcessInfo in '..\Sources\CProcessInfo.pas',
   CServiceInfo in '..\Sources\CServiceInfo.pas',
   CDesktopMonitorInfo in '..\Sources\CDesktopMonitorInfo.pas',
   CComputerSystemInfo in '..\Sources\CComputerSystemInfo.pas',
@@ -68,6 +72,12 @@ contains
   CDiskPartitionInfo in '..\sources\CDiskPartitionInfo.pas',
   CEnvironmentInfo in '..\sources\CEnvironmentInfo.pas',
   CWMISQL in '..\Sources\CWMISQL.pas',
-  FrComponent in '..\demos\Generic\FrComponent.pas' {FrameComponent: TFrame};
+  CVideoControllerInfo in '..\sources\CVideoControllerInfo.pas',
+  CPnPEntityInfo in '..\sources\CPnPEntityInfo.pas',
+  CProductInfo in '..\sources\CProductInfo.pas',
+  CFanInfo in '..\sources\CFanInfo.pas',
+  CDisplayConfigurationInfo in '..\sources\CDisplayConfigurationInfo.pas',
+  CProcessInfo in '..\sources\CProcessInfo.pas',
+  WbemScripting_TLB in '..\sources\WbemScripting_TLB.pas';
 
 end.

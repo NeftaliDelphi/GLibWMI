@@ -1,6 +1,6 @@
 object FormMainBios: TFormMainBios
-  Left = 579
-  Top = 53
+  Left = 842
+  Top = 268
   BorderStyle = bsNone
   ClientHeight = 597
   ClientWidth = 383
@@ -418,11 +418,15 @@ object FormMainBios: TFormMainBios
         BevelInner = bvNone
         BevelOuter = bvNone
         Ctl3D = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
         ParentCtl3D = False
         ParentFont = False
         TabOrder = 19
         Visible = False
-        Zoom = 100
       end
       object clbCaract: TCheckListBox
         Left = 24
@@ -591,7 +595,7 @@ object FormMainBios: TFormMainBios
     Left = 232
     Top = 56
     Bitmap = {
-      494C010103000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -734,7 +738,7 @@ object FormMainBios: TFormMainBios
     Left = 200
     Top = 56
   end
-  object BiosInfo1: TBiosInfo
+  object BiosInfo1: TBIOSInfo
     Host = '.'
     Active = False
     AllProperties.Strings = (

@@ -3,7 +3,8 @@ program ProcessorInfo;
 uses
   Forms,
   FrameInfo in 'FrameInfo.pas' {FrInfo: TFrame} ,
-  UMainDemoProcessor in 'UMainDemoProcessor.pas' {FormMainProcessor};
+  UMainDemoProcessor in 'UMainDemoProcessor.pas' {FormMainProcessor},
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
 
 {$R *.res}
 

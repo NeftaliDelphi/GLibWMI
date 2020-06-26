@@ -1,6 +1,6 @@
 object FormMainProcessor: TFormMainProcessor
-  Left = 240
-  Top = 33
+  Left = 398
+  Top = 133
   BorderStyle = bsNone
   ClientHeight = 662
   ClientWidth = 500
@@ -29,7 +29,6 @@ object FormMainProcessor: TFormMainProcessor
     BevelInner = bvLowered
     BevelWidth = 2
     TabOrder = 0
-    ExplicitWidth = 492
     object Panel1: TPanel
       Left = 4
       Top = 627
@@ -39,11 +38,10 @@ object FormMainProcessor: TFormMainProcessor
       AutoSize = True
       Caption = 'Panel1'
       TabOrder = 0
-      ExplicitWidth = 484
       object ToolBar1: TToolBar
         Left = 1
         Top = 1
-        Width = 482
+        Width = 490
         Height = 29
         ButtonHeight = 25
         Caption = 'ToolBarButtons'
@@ -93,7 +91,7 @@ object FormMainProcessor: TFormMainProcessor
           BevelInner = bvNone
           BevelOuter = bvNone
           Ctl3D = False
-          Font.Charset = DEFAULT_CHARSET
+          Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
           Font.Name = 'MS Sans Serif'
@@ -102,7 +100,6 @@ object FormMainProcessor: TFormMainProcessor
           ParentFont = False
           TabOrder = 0
           Visible = False
-          Zoom = 100
         end
       end
     end
@@ -114,7 +111,6 @@ object FormMainProcessor: TFormMainProcessor
       Align = alClient
       TabOrder = 1
       OnMouseDown = pnlTitleMouseDown
-      ExplicitWidth = 484
       object PageControl1: TPageControl
         Left = 1
         Top = 1
@@ -126,10 +122,6 @@ object FormMainProcessor: TFormMainProcessor
         TabOrder = 0
         object tsProcessor0: TTabSheet
           Caption = 'Procesador 0'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
       end
     end
@@ -142,7 +134,6 @@ object FormMainProcessor: TFormMainProcessor
       Color = clWhite
       TabOrder = 2
       OnMouseDown = pnlTitleMouseDown
-      ExplicitWidth = 484
       DesignSize = (
         492
         49)
@@ -289,7 +280,7 @@ object FormMainProcessor: TFormMainProcessor
     Left = 232
     Top = 56
     Bitmap = {
-      494C0101030004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -436,7 +427,7 @@ object FormMainProcessor: TFormMainProcessor
     Left = 328
     Top = 56
     Bitmap = {
-      494C0101010004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000079798200000000000000000000000000000000007B7B81000000
@@ -595,10 +586,6 @@ object FormMainProcessor: TFormMainProcessor
         'sInfo = 3;'#10#9'Stepping = "7";'#10#9'SystemCreationClassName = "Win32_Co' +
         'mputerSystem";'#10#9'SystemName = "GESTEVEZ";'#10#9'UpgradeMethod = 9;'#10#9'Ve' +
         'rsion = "Modelo 7, nivel 7";'#10'};'#10)
-    ProcessorProperties.ArchitectureAsString = 'x64'
-    ProcessorProperties.AvailabilityAsString = 'Running or Full Power'
-    ProcessorProperties.CpuStatusAsString = 'CPU Enabled'
-    ProcessorProperties.ProcessorTypeAsString = 'Central Processor'
     Left = 296
     Top = 56
   end

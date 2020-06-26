@@ -4,7 +4,7 @@ uses
   Forms,
   FMain in 'FMain.pas' {FormMain},
   UConst in 'UConst.pas',
-  FAbout in 'FAbout.pas' {FormAbout};
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
 
 {$R *.res}
 

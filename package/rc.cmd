@@ -1,10 +1,11 @@
+@echo off
 echo ***********************************************
 echo      COMPILANDO RECURSOS de los componentes
 echo ***********************************************
 del glibwmires.res
-del glibwmiSQLres.res
+REM del glibwmiSQLres.res
 
-brcc32 glibwmires.rc > Errores.txt
-brcc32 glibwmiSQLres.rc > Errores.txt
+"c:\Program Files (x86)\Embarcadero\Studio\20.0\bin\brcc32.exe" glibwmires.rc > Errores.txt
+REM brcc32 glibwmiSQLres.rc > Errores.txt
 type Errores.txt
 pause

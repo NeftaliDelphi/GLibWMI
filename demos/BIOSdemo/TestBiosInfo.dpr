@@ -2,7 +2,8 @@ program TestBiosInfo;
 
 uses
   Forms,
-  UMainDemoBIOS in 'UMainDemoBIOS.pas' {FormMainBios};
+  UMainDemoBIOS in 'UMainDemoBIOS.pas' {FormMainBios},
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
 
 {$R *.res}
 

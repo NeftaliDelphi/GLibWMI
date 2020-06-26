@@ -26,6 +26,8 @@ del *.map /s /Q
 del *.tds /s /Q	
 @echo == 	Ficheros *.exe de las demos
 del .\demos\*.exe /s /Q	
+@echo == 	Ficheros *.dsm
+del *.dsm /s /Q	
 
 
 echo ---------------------------------------------

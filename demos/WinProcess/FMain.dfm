@@ -1,9 +1,9 @@
 object FormMain: TFormMain
-  Left = 293
-  Top = 218
+  Left = 181
+  Top = 24
+  Width = 1133
+  Height = 720
   Caption = 'Viewer Process.  v.1.1'
-  ClientHeight = 669
-  ClientWidth = 840
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,32 +20,31 @@ object FormMain: TFormMain
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
-    Left = 609
+    Left = 894
     Top = 0
     Width = 5
     Height = 650
+    Cursor = crHSplit
     Align = alRight
     Beveled = True
     Color = clMedGray
     ParentColor = False
-    ExplicitLeft = 617
-    ExplicitHeight = 642
   end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 650
-    Width = 840
+    Width = 1125
     Height = 19
     Cursor = crHandPoint
     Panels = <>
     SimplePanel = True
-    SimpleText = 'Copyright '#169' Neftal'#237'  -  http://neftali.clubdelphi.com    (2010)'
+    SimpleText = 'Copyright '#169' Neftal'#237'  -  http://neftali.clubdelphi.com    (2020)'
     OnClick = StatusBar1Click
   end
   object pnlCentral: TPanel
     Left = 0
     Top = 0
-    Width = 609
+    Width = 894
     Height = 650
     Align = alClient
     Caption = 'pnlCentral'
@@ -53,12 +52,12 @@ object FormMain: TFormMain
     object sgProcess: TStringGrid
       Left = 1
       Top = 1
-      Width = 607
+      Width = 892
       Height = 648
       Align = alClient
       Color = 16250871
       Ctl3D = False
-      DefaultRowHeight = 16
+      DefaultRowHeight = 20
       FixedCols = 0
       RowCount = 2
       Font.Charset = DEFAULT_CHARSET
@@ -80,9 +79,6 @@ object FormMain: TFormMain
         64
         64
         64)
-      RowHeights = (
-        16
-        16)
     end
     object Button1: TButton
       Left = 264
@@ -265,7 +261,7 @@ object FormMain: TFormMain
     end
   end
   object pnlRight: TPanel
-    Left = 614
+    Left = 899
     Top = 0
     Width = 226
     Height = 650
@@ -319,35 +315,6 @@ object FormMain: TFormMain
       object N2: TMenuItem
         Caption = '-'
       end
-      object Idioma1: TMenuItem
-        Caption = '&Idioma'
-        Visible = False
-        object Espaol1: TMenuItem
-          AutoCheck = True
-          Caption = '&Espa'#241'ol'
-          Checked = True
-          GroupIndex = 1
-          RadioItem = True
-          OnClick = Espaol1Click
-        end
-        object Ingls1: TMenuItem
-          AutoCheck = True
-          Caption = '&Ingl'#233's'
-          GroupIndex = 1
-          RadioItem = True
-          OnClick = Ingls1Click
-        end
-        object Francs1: TMenuItem
-          AutoCheck = True
-          Caption = '&Franc'#233's'
-          GroupIndex = 1
-          RadioItem = True
-          OnClick = Francs1Click
-        end
-      end
-      object N3: TMenuItem
-        Caption = '-'
-      end
       object ActionCerrar1: TMenuItem
         Action = ActionCerrar
       end
@@ -368,28 +335,6 @@ object FormMain: TFormMain
       end
       object RestaurarTaskManager1: TMenuItem
         Action = ActionRestaurarTaskManager
-      end
-    end
-    object Exportar1: TMenuItem
-      Caption = '&Exportar'
-      Visible = False
-      object ExportaraHTML1: TMenuItem
-        Action = ActionExportHTML
-      end
-      object ExportaraRTF1: TMenuItem
-        Action = ActionExportRTF
-      end
-      object ExportaraTXT1: TMenuItem
-        Action = ActionExportTXT
-      end
-      object ExportaraTAB1: TMenuItem
-        Action = ActionExportTAB
-      end
-      object ExportaraSYLK1: TMenuItem
-        Action = ActionExportSYLK
-      end
-      object ExportaraDOC1: TMenuItem
-        Action = ActionExportDOC
       end
     end
     object Columns1: TMenuItem
@@ -575,7 +520,7 @@ object FormMain: TFormMain
     Left = 568
     Top = 8
     Bitmap = {
-      494C010117001800100010001000FFFFE100FF10FFFFFFFFFFFFFFFF424D3600
+      494C010117001800040010001000FFFFE100FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000006000000001002000000000000060
       000000000000000000000000000000000000E1FFFF00E1FFFF00E1FFFF00E1FF
       FF00E1FFFF00E1FFFF004E576600E1FFFF00E1FFFF00E1FFFF00E1FFFF003D60
@@ -1375,7 +1320,7 @@ object FormMain: TFormMain
       000000000000}
   end
   object TimerRefresh: TTimer
-    Interval = 300
+    Interval = 5000
     OnTimer = TimerRefreshTimer
     Left = 472
     Top = 8

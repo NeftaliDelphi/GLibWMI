@@ -4,7 +4,8 @@ program ServiceControl;
 
 uses
   Forms,
-  FMain in 'FMain.pas' {FormMain};
+  FMain in 'FMain.pas' {FormMain},
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
 
 {$R *.res}
 

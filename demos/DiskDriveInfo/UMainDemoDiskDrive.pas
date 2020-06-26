@@ -8,8 +8,7 @@ uses
   {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ActnList, ComCtrls, ToolWin, StdCtrls, ExtCtrls, ImgList,
-  Buttons, CWMIBase, CDiskDriveInfo, CheckLst, Contnrs, FrameInfo,
-  System.ImageList, System.Actions;
+  Buttons, CWMIBase, CDiskDriveInfo, CheckLst, Contnrs, FrameInfo;
 
 // Mensages
 const

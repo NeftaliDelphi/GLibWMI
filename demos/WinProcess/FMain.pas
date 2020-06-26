@@ -12,9 +12,7 @@ uses
   Dialogs, ActnList, Menus, CWMIBase, CProcessInfo, Grids,
   UConst, ImgList, ExtCtrls, ComCtrls,
   ShellAPI, OI, StdCtrls, XPMenu,
-  ComObj, System.Actions
-//  , mxExport
-  ;
+  ComObj;
 
 Type
   //: Tipo de Dat de la columna por la que queremos ordenar.
@@ -62,7 +60,6 @@ Type
     ActionVerDetalles: TAction;
     Verdetalles1: TMenuItem;
     N1: TMenuItem;
-    Exportar1: TMenuItem;
     Button1: TButton;
     Button2: TButton;
     ActionRefrescar: TAction;
@@ -78,23 +75,12 @@ Type
     ActionExportTXT: TAction;
     ActionExportDOC: TAction;
     Ayudasobreelprograma1: TMenuItem;
-    ExportaraHTML1: TMenuItem;
-    ExportaraRTF1: TMenuItem;
-    ExportaraTXT1: TMenuItem;
-    ExportaraTAB1: TMenuItem;
-    ExportaraSYLK1: TMenuItem;
-    ExportaraDOC1: TMenuItem;
-    Idioma1: TMenuItem;
-    Espaol1: TMenuItem;
-    Ingls1: TMenuItem;
-    Francs1: TMenuItem;
     ActionReempazarTaskManager: TAction;
     ActionRestaurarTaskManager: TAction;
     edtLastTaskMan: TEdit;
     N2: TMenuItem;
     ReemplazarTaskManager1: TMenuItem;
     RestaurarTaskManager1: TMenuItem;
-    N3: TMenuItem;
     ActionCerrar1: TMenuItem;
     ActionEjecutar: TAction;
     Herramientas1: TMenuItem;
@@ -142,16 +128,7 @@ Type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure ActionAcercaDeExecute(Sender: TObject);
-//    procedure ActionExportHTMLExecute(Sender: TObject);
-//    procedure ActionExportRTFExecute(Sender: TObject);
-//    procedure ActionExportSYLKExecute(Sender: TObject);
-//    procedure ActionExportTABExecute(Sender: TObject);
-//    procedure ActionExportTXTExecute(Sender: TObject);
-//    procedure ActionExportDOCExecute(Sender: TObject);
     procedure StatusBar1Click(Sender: TObject);
-    procedure Espaol1Click(Sender: TObject);
-    procedure Ingls1Click(Sender: TObject);
-    procedure Francs1Click(Sender: TObject);
     procedure ActionReempazarTaskManagerExecute(Sender: TObject);
     procedure ActionRestaurarTaskManagerExecute(Sender: TObject);
     procedure ActionEjecutarExecute(Sender: TObject);
@@ -229,10 +206,10 @@ implementation
 {$R *.dfm}
 
 uses
-  Registry,
+  Registry, FormAbout,
   {gnuGetText,} // Prepared for translations
   UPLProcedures, UPLconstantesMI,
-  StrUtils, TypInfo, FAbout;
+  StrUtils, TypInfo;
 
 function GetTempDirectory: String;
 var
@@ -398,8 +375,6 @@ procedure TFormMain.FormShow(Sender: TObject);
 var
   i:Integer;
 begin
-
-
   // centrar el panel de info
   pnlInfo.Left := (Self.Width - PnlInfo.Width) div 2;
   pnlInfo.Top := (Self.Height - PnlInfo.Height) div 2;
@@ -471,10 +446,6 @@ begin
     Exit;
   end;
 
-
-  // Por ahora deactivamos el refresco
-  Exit;
-
   // Refrescar Datos
   RefreshData({inicial}False);
 
@@ -487,7 +458,7 @@ var
 begin
 
   // Visualizar el panel
-  pnlInfo.Visible := True;
+  pnlInfo.Visible := Inicial;
   Application.ProcessMessages;
   pnlInfo.Refresh;
 
@@ -504,25 +475,26 @@ begin
     end
     else begin
       // !!!!!!!!!!  POR ahora sólo la primera
-      Exit;
+      // Exit;
     end;
+
 
     // refrescar columnas
     for i := 1 to (ProcessInfo1.ObjectsCount) do begin
       // Activar
-      ProcessInfo1.ObjectIndex := i;
+      ProcessInfo1.ObjectIndex := (ProcessInfo1.ObjectsCount - (i - 1));
       props := ProcessInfo1.ProcessProperties;
-
       sgProcess.RowCount := ProcessInfo1.ObjectsCount + 1;
       // rellenar
       sgProcess.Cells[0, i] := IntToStr(i);        // ObjectIndex
-
       sgProcess.Cells[2, i] := props.Caption;        // Caption
       sgProcess.Cells[3, i] := props.Handle;        // Handle
+
       sgProcess.Cells[4, i] := IntToStr(props.ThreadCount);        // Threads
       sgProcess.Cells[5, i] := props.Description;   // DEsc
       sgProcess.Cells[6, i] := IntToStr(props.Priority);     // Prioridad
       sgProcess.Cells[7, i] := props.ExecutablePath;          // Prioridad
+
       // Otros
       sgProcess.Cells[8, i] := props.CommandLine;
       sgProcess.Cells[9, i] := _GetOwnerProcess(props.Handle);
@@ -841,7 +813,6 @@ procedure TFormMain._PaintArrow(ACol, ARow:Integer; ARect:TRect);
 var
   i, j:Integer;
 begin
-
   // Fila no de títulos
   if (ARow <> 0) then begin
     Exit;
@@ -866,63 +837,62 @@ var
  APolyLine: Array[0..2] of TPoint;
 	SaveCol, BrushCol : TColor;
 begin
- // Utilizamos el canvas pasado como parámetro
- with sGrid.Canvas do begin
-  // Guardar los valores actuales
-  SaveCol := Pen.Color;
-	BrushCol := Brush.Color;
-	// Activar los nuevos valores depintado
-  Brush.Style := bsSolid;
-	Pen.Color := sgProcess.FixedColor;
-	Brush.Color := sgProcess.FixedColor;
-	// Dibujar un rectágulo debajo para tapar el título
-  Rectangle(Rect.Right-13, Rect.Top+3, Rect.Right-1, Rect.Top+15);
-	// Dibujamos la flecha
-  Pen.Color := clGray{clBlack};
-	APolyLine[0]:=Point(Rect.Right-4, Rect.Top+5);
-	APolyLine[1]:=Point(Rect.Right-11, Rect.Top+5);
-	APolyLine[2]:=Point(Rect.Right-8, Rect.Top+11);
-	PolyLine(APolyLine);
-	Pen.Color := clWhite;
-	MoveTo(Rect.Right-7, Rect.Top+11);
-	LineTo(Rect.Right-4, Rect.Top+5);
+  // Utilizamos el canvas pasado como parámetro
+  with sGrid.Canvas do begin
+    // Guardar los valores actuales
+    SaveCol := Pen.Color;
+    BrushCol := Brush.Color;
+    // Activar los nuevos valores depintado
+    Brush.Style := bsSolid;
+    Pen.Color := sgProcess.FixedColor;
+    Brush.Color := sgProcess.FixedColor;
+    // Dibujar un rectágulo debajo para tapar el título
+    Rectangle(Rect.Right-13, Rect.Top+3, Rect.Right-1, Rect.Top+15);
+    // Dibujamos la flecha
+    Pen.Color := clGray{clBlack};
+    APolyLine[0]:=Point(Rect.Right-4, Rect.Top+5);
+    APolyLine[1]:=Point(Rect.Right-11, Rect.Top+5);
+    APolyLine[2]:=Point(Rect.Right-8, Rect.Top+11);
+    PolyLine(APolyLine);
+    Pen.Color := clWhite;
+    MoveTo(Rect.Right-7, Rect.Top+11);
+    LineTo(Rect.Right-4, Rect.Top+5);
 
-	// Restaurar valores guardados
-  Brush.Color := BrushCol;
-	Pen.Color := SaveCol;
- end;
-
+    // Restaurar valores guardados
+    Brush.Color := BrushCol;
+    Pen.Color := SaveCol;
+  end;
 end;
 
 procedure TFormMain._PaintArrowUp(sGrid:TStringGrid; var Rect: TRect);
 var
  SaveCol, BrushCol : TColor;
 begin
- // Utilizamos el canvas pasado por parámetro.
- with sGrid.Canvas do begin
- 	// Guardar los valores de los colores
-  SaveCol := Pen.Color;
-	BrushCol := Brush.Color;
-	// Nuevo estilo de pintado.
-  Brush.Style := bsSolid;
-	Pen.Color := sGrid.FixedColor;
-	Brush.Color := sGrid.FixedColor;
-	// Rectangulo por debajo para tapar el título
-  Rectangle(Rect.Right-13, Rect.Top+3, Rect.Right-1, Rect.Top+15);
-	// Dibujar la flacha
-  Pen.Color := clGray{clBlack};
-	MoveTo(Rect.Right-11, Rect.Top+11);
-	LineTo(Rect.Right-8, Rect.Top+5);
-	LineTo(Rect.Right-7, Rect.Top+5);
-	Pen.Color:=clWhite;
-	MoveTo(Rect.Right-7, Rect.Top+5);
-	LineTo(Rect.Right-4, Rect.Top+11);
-	LineTo(Rect.Right-11, Rect.Top+11);
+  // Utilizamos el canvas pasado por parámetro.
+  with sGrid.Canvas do begin
+    // Guardar los valores de los colores
+    SaveCol := Pen.Color;
+    BrushCol := Brush.Color;
+    // Nuevo estilo de pintado.
+    Brush.Style := bsSolid;
+    Pen.Color := sGrid.FixedColor;
+    Brush.Color := sGrid.FixedColor;
+    // Rectangulo por debajo para tapar el título
+    Rectangle(Rect.Right-13, Rect.Top+3, Rect.Right-1, Rect.Top+15);
+    // Dibujar la flacha
+    Pen.Color := clGray{clBlack};
+    MoveTo(Rect.Right-11, Rect.Top+11);
+    LineTo(Rect.Right-8, Rect.Top+5);
+    LineTo(Rect.Right-7, Rect.Top+5);
+    Pen.Color:=clWhite;
+    MoveTo(Rect.Right-7, Rect.Top+5);
+    LineTo(Rect.Right-4, Rect.Top+11);
+    LineTo(Rect.Right-11, Rect.Top+11);
 
-	//Restaurar los colores
-  Brush.Color := BrushCol;
-	Pen.Color := SaveCol;
- end;
+    //Restaurar los colores
+    Brush.Color := BrushCol;
+    Pen.Color := SaveCol;
+  end;
 end;
 
 
@@ -1129,7 +1099,7 @@ begin
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
-begin                                          
+begin
 
   // Traducir el formulario
   // TranslateComponent(Self);   -- Prepared for translations
@@ -1273,13 +1243,8 @@ procedure TFormMain.Button3Click(Sender: TObject);
 var
   i:Integer;
 begin
-  i := ProcessInfo1.CreateProcess('c:\WINDOWS\NOTEPAD.EXE ',
-                                  STR_EMPTY,
-                                  0,
-                                  i);
-
+  i := ProcessInfo1.Create_('', '', 'c:\WINDOWS\NOTEPAD.EXE ', STR_EMPTY, '', i);
   MessageDlg('Resultado; PID=' + IntToStr(i), mtInformation, [mbOK], 0);
-
 end;
 
 procedure TFormMain.Button4Click(Sender: TObject);
@@ -1290,7 +1255,6 @@ var
 begin
   Str := sgProcess.Cells[3, sgProcess.Row];
   i := ProcessInfo1.GetOwner('Handle', Str, AUsuario, ADominio);
-
   MessageDlg('Pertenece a: ' + ADominio + ' | ' + AUsuario, mtInformation, [mbOK], 0);
 end;
 
@@ -1302,7 +1266,6 @@ var
 begin
   Str := sgProcess.Cells[3, sgProcess.Row];
   i := ProcessInfo1.GetOwnerSID('Handle' , Str, SID);
-
   MessageDlg('Pertenece a: ' + SID, mtInformation, [mbOK], 0);
 
 end;
@@ -1310,8 +1273,9 @@ end;
 // Obtener el owner del proceso.
 function TFormMain._GetOwnerProcess(AHandle:string): string;
 var
-  AUsuario,ADominio:string;
+  AUsuario, ADominio:string;
 begin
+  Exit;
   Result := STR_EMPTY;
   try
     ProcessInfo1.GetOwner('Handle', AHandle, AUsuario, ADominio);
@@ -1322,74 +1286,14 @@ begin
 end;
 
 procedure TFormMain.ActionAcercaDeExecute(Sender: TObject);
+var
+  FormAbout:TFAbout;
 begin
-  // Abrior el form
-  FormAbout := TFormAbout.CReate(Application);
+  // Abrir el form
+  FormAbout := TFAbout.CReate(Application);
   FormAbout.ShowModal;
 end;
 
-{
-procedure TFormMain.ActionExportHTMLExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.html';
-  _ExportProcesses(xtHTML);
-end;
-
-procedure TFormMain._ExportProcesses(ATipo: TmxExportType);
-var
-  Str:string;
-begin
-
-  mxProcessExport.ExportType := ATipo;
-  mxProcessExport.FileName := IncludeTrailingBackslash(GetTempDirectory) + mxProcessExport.FileName;
-  mxProcessExport.Execute;
-
-  // Ver el resultado?
-
-  if (MessageBox(0, PChar('El fichero se ha almacenado en:'+#13+#10+mxProcessExport.FileName+
-                     #13+#10+'¿Desea ver ahora el resultado de la exportación?'),
-                     PChar('Fichero de exportación'),
-                     MB_ICONQUESTION or MB_YESNO) = idYes) then begin
-//  if (MessageBox(0, '¿Desea ver ahora el resultado de la exportación?', '', MB_ICONQUESTION or MB_YESNO) = idYes) then begin
-    // Abrir el fichero
-    ShellExecute(Application.Handle, Nil,
-                PChar(mxProcessExport.FileName), Nil,
-                PChar(ExtractFilePath(mxProcessExport.FileName)), SW_SHOWNOACTIVATE);
-  end;
-
-end;
-}
-{
-procedure TFormMain.ActionExportRTFExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.rtf';
-  _ExportProcesses(xtRTF);
-end;
-
-procedure TFormMain.ActionExportSYLKExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.slk';
-  _ExportProcesses(xtSYLK);
-end;
-
-procedure TFormMain.ActionExportTABExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.txt';
-  _ExportProcesses(xtTAB);
-end;
-
-procedure TFormMain.ActionExportTXTExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.txt';
-  _ExportProcesses(xtTXT);
-end;
-
-procedure TFormMain.ActionExportDOCExecute(Sender: TObject);
-begin
-  mxProcessExport.FileName := 'out.doc';
-  _ExportProcesses(xtWord);
-end;
-}
 
 procedure TFormMain.StatusBar1Click(Sender: TObject);
 begin
@@ -1397,32 +1301,6 @@ begin
   ShellExecute(Handle, 'open',
                'http://neftali.clubdelphi.com/',
               nil, nil, SW_SHOW);end;
-
-procedure TFormMain.Espaol1Click(Sender: TObject);
-begin
-//-->Prepared for translations
-//  // para el español
-//  UseLanguage('es');
-//  RetranslateComponent(Self);
-end;
-
-procedure TFormMain.Ingls1Click(Sender: TObject);
-begin
-//-->Prepared for translations
-//  // para el inglés
-//  UseLanguage('en');
-//  RetranslateComponent(Self);
-
-end;
-
-procedure TFormMain.Francs1Click(Sender: TObject);
-begin
-//-->Prepared for translations
-//  // para el fancés
-//  UseLanguage('fr');
-//  RetranslateComponent(Self);
-
-end;
 
 procedure TFormMain.ActionReempazarTaskManagerExecute(Sender: TObject);
 var
@@ -1532,10 +1410,10 @@ begin
     // Matar el proceso
     Str := sgProcess.Cells[3{colHandle.Index}, i];
     h := StrToIntDef(Str, 0);
-    // Correcto
-    if (h > 0) then begin
-      ProcessInfo1.Terminate('Handle', Str, 0);
-    end;
+//    // Correcto
+//    if (h > 0) then begin
+//      ProcessInfo1.Terminate('Handle', Str, 0);
+//    end;
   end;
 
 
@@ -1582,10 +1460,6 @@ begin
   ActionVisColTitulo.Checked := RestoreOptionValue(path, 'ActionVisColTitulo_Checked', True);
   ActionVerDetalles.Checked := RestoreOptionValue(path, 'ActionVerDetalles_Checked', True);
 
-  Espaol1.Checked := RestoreOptionValue(path, 'Espaol1_Checked', True);
-  Francs1.Checked := RestoreOptionValue(path, 'Francs1_Checked', False);
-  Ingls1.Checked := RestoreOptionValue(path, 'Ingls1_Checked', False);
-
   edtLastTaskMan.Text := RestoreOptionValue(path, 'edtLastTaskMan_Text', STR_EMPTY);
 
   ActionReempazarTaskManager.Visible := RestoreOptionValue(path, 'ActionReempazarTaskManager_Visible', True);
@@ -1626,11 +1500,6 @@ begin
                           BoolToStr(ActionVisColThreads.Checked, True),
                           BoolToStr(ActionVisColTitulo.Checked, True),
                           BoolToStr(ActionVerDetalles.Checked, True)]);
-
-  // Idiomas
-  SaveOptionValues(path, ['Espaol1_Checked'], [BoolToStr(Espaol1.Checked, True)]);
-  SaveOptionValues(path, ['Francs1_Checked'], [BoolToStr(Francs1.Checked, True)]);
-  SaveOptionValues(path, ['Ingls1_Checked'], [BoolToStr(Ingls1.Checked, True)]);
 
   // Otros
   SaveOptionValues(path, ['ActionReempazarTaskManager_Visible',

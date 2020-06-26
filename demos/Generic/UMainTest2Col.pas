@@ -7,20 +7,21 @@ unit UMainTest2Col;
 //=========================================================================
 interface
 
-{$I .\..\package\jedi.inc}
+{$I .\..\..\package\jedi.inc}
 
 uses
   {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, CWMIBase, CCDRomDriveInfo, OI, ExtCtrls, ComCtrls, FrComponent,
-  CBiosInfo, CDisplayInfo, CDiskDriveInfo, ImgList, CPrinterInfo,
+  CBiosInfo, CDiskDriveInfo, ImgList, CPrinterInfo,
   CKeyboardInfo, CProcessorInfo, StdCtrls, Buttons, CSoundDeviceInfo,
   CBatteryInfo, COperatingSystemInfo, CPointingDeviceInfo,
   CPhysicalMemoryInfo,
   Math, CProcessInfo, CServiceInfo, CComputerSystemInfo,
   CDesktopMonitorInfo, CStartupCommandInfo, ActnList, ToolWin, CShareInfo,
   CUserAccountInfo, CNetworkAdapterInfo, CUSBControllerInfo, CPrintJobInfo,
-  CDiskPartitionInfo, CEnvironmentInfo, System.Actions, System.ImageList;
+  CDiskPartitionInfo, CEnvironmentInfo, CFanInfo, CPnPEntityInfo,
+  CVideoControllerInfo, CProductInfo, CDisplayConfigurationInfo;
 
 type
   TFormMain = class(TForm)
@@ -31,8 +32,7 @@ type
     List: TListView;
     BiosInfo1: TBiosInfo;
     DiskDriveInfo1: TDiskDriveInfo;
-    DisplayInfo1: TDisplayInfo;
-    ImageList1: TImageList;
+    imagelist1: TImageList;
     Panel5: TPanel;
     ProcessorInfo1: TProcessorInfo;
     KeyboardInfo1: TKeyboardInfo;
@@ -112,7 +112,6 @@ type
     FrameKeyboard: TFrameComponent;
     FrameCDROM: TFrameComponent;
     FrameProcessor: TFrameComponent;
-    FrameDisplay: TFrameComponent;
     FrameDiskDrive: TFrameComponent;
     FrameBios: TFrameComponent;
     FramePointerDevice: TFrameComponent;
@@ -120,6 +119,16 @@ type
     Splitter2: TSplitter;
     pnlInfo: TPanel;
     Image2: TImage;
+    FrameFan: TFrameComponent;
+    FanInfo1: TFanInfo;
+    FramePnpEntity: TFrameComponent;
+    FrameProduct: TFrameComponent;
+    FrameDisplayConfiguration: TFrameComponent;
+    FrameVideoController: TFrameComponent;
+    PnPEntityInfo1: TPnPEntityInfo;
+    ProductInfo1: TProductInfo;
+    VideoControllerInfo1: TVideoControllerInfo;
+    DisplayConfigurationInfo1: TDisplayConfigurationInfo;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ListAdvancedCustomDrawItem(Sender: TCustomListView;
@@ -383,7 +392,6 @@ begin
 
   // Asignar componentes
   FrameBIOS.SetComponentProp(BiosInfo1, BiosInfo1.BiosProperties);
-  FrameDisplay.SetComponentProp(DisplayInfo1,DisplayInfo1.DisplayProperties);
   FrameDiskDrive.SetComponentProp(DiskDriveInfo1, DiskDriveInfo1.DiskDriveProperties);
   FrameProcessor.SetComponentProp(ProcessorInfo1, ProcessorInfo1.ProcessorProperties);
   FrameKeyboard.SetComponentProp(KeyboardInfo1, KeyboardInfo1.KeyboardProperties);
@@ -409,6 +417,14 @@ begin
 
   FrameDiskPartition.SetComponentProp(DiskPartitionInfo1, DiskPartitionInfo1.DiskPartitionProperties);
   FrameEnvironment.SetComponentProp(EnvironmentInfo1, EnvironmentInfo1.EnvironmentProperties);
+
+  FrameFan.SetComponentProp(FanInfo1, FanInfo1.FanProperties);
+  FramePnpEntity.SetComponentProp(PnPEntityInfo1, PnPEntityInfo1.PnPEntityProperties);
+  FrameProduct.SetComponentProp(ProductInfo1, ProductInfo1.ProductProperties);
+  FrameVideoController.SetComponentProp(VideoControllerInfo1, VideoControllerInfo1.VideoControllerProperties);
+  FrameDisplayConfiguration.SetComponentProp(DisplayConfigurationInfo1, DisplayConfigurationInfo1.DisplayConfigurationProperties);
+
+
 
   // Asignar el evento OnSelect
   for i := 0 to (self.ComponentCount - 1) do begin

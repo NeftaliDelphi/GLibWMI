@@ -8,8 +8,7 @@ uses
   {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ActnList, ComCtrls, ToolWin, StdCtrls, ExtCtrls, ImgList,
-  Buttons, CWMIBase, CProcessorInfo, CheckLst, Contnrs, FrameInfo,
-  System.Actions, System.ImageList;
+  Buttons, CWMIBase, CProcessorInfo, CheckLst, Contnrs, FrameInfo;
 
 // Mensages
 const
@@ -286,10 +285,8 @@ begin
     edtManufacturer.Text := ddProps.Manufacturer;
     // Arquitectura
     edtArq.Text := IntToStr(ddProps.Architecture);
-    edtArqAsString.Text := ddProps.ArchitectureAsString;
     // Familia
     edtFamily.Text := IntToStr(ddProps.Family);
-    edtFamilyStr.Text := ddProps.FamilyAsString;
 
     edtSocket.Text := ddProps.SocketDesignation;
     edtProcessorID.Text := ddProps.ProcessorId;
@@ -317,7 +314,6 @@ begin
     edtLogProc.Text := IntToStr(ddProps.NumberOfLogicalProcessors);
     edtRole.Text := ddProps.Role;
     edtStatus.Text := ddProps.Status;
-    edtStatusStr.Text := ddProps.CpuStatusAsString;
     edtStatusInfo.Text := IntToStr(ddProps.StatusInfo);
     edtPowerManagCap.Text := ddProps.PowerManagementCapabilitiesAsString;
     cbPowerManagSup.Checked := ddProps.PowerManagementSupported;

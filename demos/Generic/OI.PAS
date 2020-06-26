@@ -332,7 +332,7 @@ begin
 
           //+G  Added type
           {$IFNDEF VER140}
-          tkUString: s.add(EvalStringProperty(PropInfo));
+//          tkUString: s.add(EvalStringProperty(PropInfo));
           {$ENDIF}
 
           tkSet: s.add(EvalSetProperty(PropInfo));

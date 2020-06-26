@@ -1,10 +1,10 @@
-program PgenericTest;
+program PGenericTest;
 
 uses
   Forms,
-  UMainTest2Col in 'UMainTest2Col.pas' {FormMain},
   FrComponent in 'FrComponent.pas' {FrameComponent: TFrame},
-  OI in 'OI.pas';
+  UMainTest2Col in 'UMainTest2Col.pas' {FormMain},
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
 
 {$R *.res}
 

@@ -17,7 +17,7 @@ del *.map /s /Q
 del *.stat /s /Q	
 del *.identcache /s /Q	
 del *.tvsconfig /s /Q	
-del *.dof /s /Q	
+
 
 rm __history /S /Q
 

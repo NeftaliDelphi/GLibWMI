@@ -1,25 +1,47 @@
 // Fichero .RC con los recursos
-TUSERACCOUNTINFO  			BITMAP  "resources\CUserAccountInfo.bmp"
-TSTARTUPCOMMANDINFO     	BITMAP  "resources\CStartupCommandInfo.bmp"
-TSOUNDDEVICEINFO     		BITMAP  "resources\CSoundDeviceInfo.bmp"
-TSHAREINFO     				BITMAP  "resources\CShareInfo.bmp"
-TSERVICEINFO     			BITMAP  "resources\CServiceInfo.bmp"
-TPROCESSORINFO     			BITMAP  "resources\CProcessorInfo.bmp"
-TPROCESSINFO     			BITMAP  "resources\CProcessInfo.bmp"
+TBATTERYINFO				BITMAP 	"resources\CBatteryInfo.bmp"
+
+
+TBIOSINFO     				BITMAP  "resources\CBiosInfo.bmp"
+
+
+TBOOTCONFIGURATIONINFO      BITMAP  "resources\CBootConfigurationInfo.bmp"
+
+
+TCDROMDRIVEINFO     		BITMAP  "resources\CCDROMDriveInfo.bmp"
+
+
+TCODECFILEINFO     			BITMAP  "resources\CCodecFileInfo.bmp"
+
+
+TCOMPUTERSYSTEMINFO     	BITMAP  "resources\CComputerSystemInfo.bmp"
+TDESKTOPINFO      			BITMAP  "resources\CDesktopInfo.bmp"
+TDESKTOPMONITORINFO     	BITMAP  "resources\CDesktopMonitorInfo.bmp"
+TDISKDRIVEINFO     			BITMAP  "resources\CDiskDriveInfo.bmp"
+TDISKPARTITIONINFO          BITMAP  "resources\CDiskPartitionInfo.bmp"
+TDISPLAYCONFIGURATIONINFO   BITMAP  "resources\CDisplayConfigurationInfo.bmp"
+TENVIRONMENTINFO            BITMAP  "resources\CEnvironmentInfo.bmp"
+TFANINFO					BITMAP  "resources\CFanInfo.bmp"
+TKEYBOARDINFO     			BITMAP  "resources\CKeyboardInfo.bmp"
+TNETWORKADAPTERINFO     	BITMAP  "resources\CNetworkAdapterInfo.bmp"
+TOPERATINGSYSTEMINFO    	BITMAP  "resources\COperatingSystemInfo.bmp"
+TPHYSICALMEMORYINFO     	BITMAP  "resources\CPhysicalMemoryInfo.bmp"
+TPNPENTITYINFO   			BITMAP  "resources\CPnpEntityInfo.bmp"
+TPOINTINGDEVICEINFO     	BITMAP  "resources\CPointingDeviceInfo.bmp"
 TPRINTERINFO     			BITMAP  "resources\CPrinterInfo.bmp"
 TPRINTJOBINFO     			BITMAP  "resources\CPrintJobInfo.bmp"
-TPOINTINGDEVICEINFO     	BITMAP  "resources\CPointingDeviceInfo.bmp"
-TPHYSICALMEMORYINFO     	BITMAP  "resources\CPhysicalMemoryInfo.bmp"
-TOPERATINGSYSTEMINFO    	BITMAP  "resources\COperatingSystemInfo.bmp"
-TNETWORKADAPTERINFO     	BITMAP  "resources\CNetworkAdapterInfo.bmp"
-TKEYBOARDINFO     			BITMAP  "resources\CKeyboardInfo.bmp"
-TDISPLAYINFO     			BITMAP  "resources\CDisplayInfo.bmp"
-TDISKDRIVEINFO     			BITMAP  "resources\CDiskDriveInfo.bmp"
-TDESKTOPMONITORINFO     	BITMAP  "resources\CDesktopMonitorInfo.bmp"
-TCOMPUTERSYSTEMINFO     	BITMAP  "resources\CComputerSystemInfo.bmp"
-TCDROMDRIVEINFO     		BITMAP  "resources\CCDROMDriveInfo.bmp"
-TBIOSINFO     				BITMAP  "resources\CBiosInfo.bmp"
-TBATTERYINFO      			BITMAP  "resources\CBatteryInfo.bmp"
+TPROCESSINFO     			BITMAP  "resources\CProcessInfo.bmp"
+TPROCESSORINFO     			BITMAP  "resources\CProcessorInfo.bmp"
+TPRODUCTINFO				BITMAP  "resources\CProductInfo.bmp"
+TREGISTRYINFO				BITMAP  "resources\CRegistryInfo.bmp"
+TSERVICEINFO     			BITMAP  "resources\CServiceInfo.bmp"
+TSHAREINFO     				BITMAP  "resources\CShareInfo.bmp"
+TSOUNDDEVICEINFO     		BITMAP  "resources\CSoundDeviceInfo.bmp"
+TSTARTUPCOMMANDINFO     	BITMAP  "resources\CStartupCommandInfo.bmp"
+TTIMEZONEINFO				BITMAP  "resources\CTimeZoneInfo.bmp"
 TUSBCONTROLLERINFO 			BITMAP  "resources\CUSBControllerInfo.bmp"
-TDISKPARTITIONINFO        BITMAP  "resources\CDiskPartitionInfo.bmp"
-TENVIRONMENTINFO        BITMAP  "resources\CEnvironmentInfo.bmp"
+TUSERACCOUNTINFO  			BITMAP  "resources\CUserAccountInfo.bmp"
+TVIDEOCONTROLLERINFO		BITMAP  "resources\CVideoControllerInfo.bmp"
+
+
+

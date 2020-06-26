@@ -17,7 +17,9 @@ del *.map /s /Q
 del *.stat /s /Q	
 del *.identcache /s /Q	
 del *.tvsconfig /s /Q	
-del *.dof /s /Q	
+del *.skincfg /s /Q	
+del *.otares /s /Q	
+del *.dsm /s /Q	
 
 rm __history /S /Q
 

@@ -3,9 +3,10 @@ unit FMain;
 interface
 
 uses
+  {$IFDEF DELPHIX_TOKYO_UP} System.ImageList, System.Actions, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, CWMIBase, CServiceInfo, StdCtrls, ComCtrls, ExtCtrls,
-  ToolWin, ImgList, ActnList, System.ImageList, System.Actions;
+  ToolWin, ImgList, ActnList;
 
 type
   TFormMain = class(TForm)
@@ -171,7 +172,7 @@ var
 begin
   Str := sgServices.Cells[1, sgServices.Row];
   ini := cbStart.Items[cbStart.ItemIndex];
-  i := ServiceInfo1.ChangeStartModeService('DisplayName', Str, ini);
+  i := ServiceInfo1.ChangeStartMode('DisplayName', Str, ini);
   sbMain.SimpleText := 'Resultado: ' + ServiceInfo1.GetErrorControlAsString(i);
   // refrescar
   btnRefreshClick(nil);

@@ -1,7 +1,0 @@
-/dcus/*.dcu
-/dcus/*.bpl
-/dcus/*.dcp
-/demos/BIOSdemo/*.exe
-/demos/BIOSdemo/*.map
-/package/*.stat
-/sources/*.dcu

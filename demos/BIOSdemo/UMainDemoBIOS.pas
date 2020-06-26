@@ -5,10 +5,10 @@ interface
 {$I .\..\..\package\jedi.inc}
 
 uses
-  {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
+  {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, System.ImageList, System.Actions, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ActnList, ComCtrls, ToolWin, StdCtrls, ExtCtrls, ImgList,
-  Buttons, CWMIBase, CBiosInfo, CheckLst, System.ImageList, System.Actions;
+  Buttons, CWMIBase, CBiosInfo, CheckLst;
 
 // Mensages
 const
@@ -187,14 +187,12 @@ begin
 
   edtID.Text := BiosInfo1.BiosProperties.SoftwareElementID;
   edtState.Text := IntToStr(BiosInfo1.BiosProperties.SoftwareElementState);
-  edtStateStr.Text := BiosInfo1.BiosProperties.SoftwareElementStateAsString;
   edtStatus.Text := BiosInfo1.BiosProperties.Status;
 
   edtTarget.Text := IntToStr(BiosInfo1.BiosProperties.TargetOperatingSystem);
-  edtTargetStr.Text := BiosInfo1.BiosProperties.TargetOperatingSystemAsString;
 
   for i := 0 to (BiosInfo1.BiosProperties.BiosCharacteristicsCount - 1) do begin
-    Str := BiosInfo1.BiosProperties.GetBiosCharacteristicsAsString(i);
+    Str := BiosInfo1.BiosProperties.GetAllBiosCharacteristicsAsString(i);
     clbCaract.Items.Add(Str);
 
     for j := 0 to (BiosInfo1.BiosProperties.BiosCharacteristicsCount - 1) do begin

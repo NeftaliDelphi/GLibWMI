@@ -29,7 +29,6 @@ object FormMainDiskDrive: TFormMainDiskDrive
     BevelInner = bvLowered
     BevelWidth = 2
     TabOrder = 0
-    ExplicitWidth = 492
     object Panel1: TPanel
       Left = 4
       Top = 597
@@ -39,11 +38,10 @@ object FormMainDiskDrive: TFormMainDiskDrive
       AutoSize = True
       Caption = 'Panel1'
       TabOrder = 0
-      ExplicitWidth = 484
       object ToolBar1: TToolBar
         Left = 1
         Top = 1
-        Width = 482
+        Width = 490
         Height = 29
         ButtonHeight = 25
         Caption = 'ToolBarButtons'
@@ -93,11 +91,15 @@ object FormMainDiskDrive: TFormMainDiskDrive
           BevelInner = bvNone
           BevelOuter = bvNone
           Ctl3D = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
           ParentCtl3D = False
           ParentFont = False
           TabOrder = 0
           Visible = False
-          Zoom = 100
         end
       end
     end
@@ -109,7 +111,6 @@ object FormMainDiskDrive: TFormMainDiskDrive
       Align = alClient
       TabOrder = 1
       OnMouseDown = pnlTitleMouseDown
-      ExplicitWidth = 484
       object PageControl1: TPageControl
         Left = 1
         Top = 1
@@ -121,10 +122,6 @@ object FormMainDiskDrive: TFormMainDiskDrive
         TabOrder = 0
         object tsDisk0: TTabSheet
           Caption = 'Disk 0'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
       end
     end
@@ -137,7 +134,6 @@ object FormMainDiskDrive: TFormMainDiskDrive
       Color = clWhite
       TabOrder = 2
       OnMouseDown = pnlTitleMouseDown
-      ExplicitWidth = 484
       DesignSize = (
         492
         49)

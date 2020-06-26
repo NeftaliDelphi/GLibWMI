@@ -10,14 +10,14 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, CWMIBase, CCDRomDriveInfo, OI, ExtCtrls, ComCtrls, FrComponent,
-  CBiosInfo, CDisplayInfo, CDiskDriveInfo, ImgList, CPrinterInfo,
+  CBiosInfo, CDiskDriveInfo, ImgList, CPrinterInfo,
   CKeyboardInfo, CProcessorInfo, StdCtrls, Buttons, CSoundDeviceInfo,
   CBatteryInfo, COperatingSystemInfo, CPointingDeviceInfo,
   CPhysicalMemoryInfo,
   Math, CProcessInfo, CServiceInfo, CComputerSystemInfo,
   CDesktopMonitorInfo, CStartupCommandInfo, ActnList, ToolWin, CShareInfo,
   CUserAccountInfo, CNetworkAdapterInfo, CUSBControllerInfo, CPrintJobInfo,
-  CDiskPartitionInfo, CEnvironmentInfo;
+  CDiskPartitionInfo, CEnvironmentInfo, System.Actions, System.ImageList;
 
 type
   TFormMain = class(TForm)
@@ -29,7 +29,6 @@ type
     Splitter1: TSplitter;
     BiosInfo1: TBiosInfo;
     DiskDriveInfo1: TDiskDriveInfo;
-    DisplayInfo1: TDisplayInfo;
     ImageList1: TImageList;
     Panel5: TPanel;
     ProcessorInfo1: TProcessorInfo;
@@ -85,37 +84,13 @@ type
     SpeedButton4: TSpeedButton;
     Bevel1: TBevel;
     ScrollBox1: TScrollBox;
-    FrameOperatingSystem: TFrameComponent;
-    FrameBattery: TFrameComponent;
-    FrameSoundDevice: TFrameComponent;
-    FramePrinter: TFrameComponent;
-    FrameKeyboard: TFrameComponent;
-    FrameCDROM: TFrameComponent;
-    FrameProcessor: TFrameComponent;
-    FrameDisplay: TFrameComponent;
-    FrameDiskDrive: TFrameComponent;
-    FrameBIOS: TFrameComponent;
-    FramePointerDevice: TFrameComponent;
-    FramePhysicalMemory: TFrameComponent;
-    FrameProcess: TFrameComponent;
-    FrameService: TFrameComponent;
-    FrameDeskopMonitor: TFrameComponent;
-    FrameComputerSystem: TFrameComponent;
-    FrameStartupCommand: TFrameComponent;
-    FrameNetWorkAdapter: TFrameComponent;
-    FrameUserAccount: TFrameComponent;
-    FrameShare: TFrameComponent;
     NetworkAdapterInfo1: TNetworkAdapterInfo;
     UserAccountInfo1: TUserAccountInfo;
     ShareInfo1: TShareInfo;
     PrintJobInfo1: TPrintJobInfo;
     USBControllerInfo1: TUSBControllerInfo;
-    FramePrintJob: TFrameComponent;
-    FrameUSbController: TFrameComponent;
     DiskPartitionInfo1: TDiskPartitionInfo;
-    FrameDiskPartition: TFrameComponent;
     EnvironmentInfo1: TEnvironmentInfo;
-    FrameEnvironment: TFrameComponent;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ListAdvancedCustomDrawItem(Sender: TCustomListView;
@@ -379,7 +354,6 @@ begin
 
   // Asignar componentes
   FrameBIOS.SetComponentProp(BiosInfo1, BiosInfo1.BiosProperties);
-  FrameDisplay.SetComponentProp(DisplayInfo1,DisplayInfo1.DisplayProperties);
   FrameDiskDrive.SetComponentProp(DiskDriveInfo1, DiskDriveInfo1.DiskDriveProperties);
   FrameProcessor.SetComponentProp(ProcessorInfo1, ProcessorInfo1.ProcessorProperties);
   FrameKeyboard.SetComponentProp(KeyboardInfo1, KeyboardInfo1.KeyboardProperties);

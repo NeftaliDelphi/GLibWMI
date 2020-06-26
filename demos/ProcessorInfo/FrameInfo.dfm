@@ -12,112 +12,112 @@ object FrInfo: TFrInfo
   object Label1: TLabel
     Left = 16
     Top = 16
-    Width = 41
+    Width = 40
     Height = 13
     Caption = 'Nombre:'
   end
   object Label2: TLabel
     Left = 16
     Top = 107
-    Width = 55
+    Width = 53
     Height = 13
     Caption = 'Fabricante:'
   end
   object Label3: TLabel
     Left = 16
     Top = 37
-    Width = 58
+    Width = 59
     Height = 13
     Caption = 'Descripci'#243'n:'
   end
   object Label4: TLabel
     Left = 16
     Top = 58
-    Width = 30
+    Width = 31
     Height = 13
     Caption = 'T'#237'tulo:'
   end
   object Label5: TLabel
     Left = 16
     Top = 79
-    Width = 64
+    Width = 60
     Height = 13
     Caption = 'Arquitectura:'
   end
   object Label6: TLabel
     Left = 16
     Top = 402
-    Width = 37
+    Width = 39
     Height = 13
     Caption = 'PNP ID:'
   end
   object Label7: TLabel
     Left = 16
     Top = 331
-    Width = 99
+    Width = 96
     Height = 13
     Caption = 'Creation Classname:'
   end
   object Label8: TLabel
     Left = 16
     Top = 352
-    Width = 93
+    Width = 91
     Height = 13
     Caption = 'System Classname:'
   end
   object Label9: TLabel
     Left = 16
     Top = 373
-    Width = 75
+    Width = 73
     Height = 13
     Caption = 'Creation Name:'
   end
   object Label11: TLabel
     Left = 16
     Top = 128
-    Width = 39
+    Width = 38
     Height = 13
     Caption = 'Version:'
   end
   object Label15: TLabel
     Left = 16
     Top = 149
-    Width = 68
+    Width = 67
     Height = 13
     Caption = 'Processor  ID:'
   end
   object Label16: TLabel
     Left = 200
     Top = 149
-    Width = 70
+    Width = 71
     Height = 13
     Caption = 'Socket design:'
   end
   object Label17: TLabel
     Left = 16
     Top = 170
-    Width = 62
+    Width = 60
     Height = 13
     Caption = 'Proc. Family:'
   end
   object Label18: TLabel
     Left = 16
     Top = 202
-    Width = 65
+    Width = 67
     Height = 13
     Caption = 'Clock Speed: '
   end
   object Label19: TLabel
     Left = 192
     Top = 202
-    Width = 81
+    Width = 78
     Height = 13
     Caption = 'Ext. Freq. Clock:'
   end
   object Label20: TLabel
     Left = 16
     Top = 223
-    Width = 77
+    Width = 78
     Height = 13
     Caption = 'Max. Clock Spd:'
   end
@@ -131,28 +131,28 @@ object FrInfo: TFrInfo
   object Label22: TLabel
     Left = 16
     Top = 494
-    Width = 35
+    Width = 33
     Height = 13
     Caption = 'Status:'
   end
   object Label23: TLabel
     Left = 208
     Top = 451
-    Width = 85
+    Width = 82
     Height = 13
     Caption = 'Number of Cores:'
   end
   object Label24: TLabel
     Left = 208
     Top = 472
-    Width = 113
+    Width = 114
     Height = 13
     Caption = 'Number of Logical Proc:'
   end
   object Label25: TLabel
     Left = 16
     Top = 522
-    Width = 107
+    Width = 106
     Height = 13
     Caption = 'Power Manag. Capab:'
   end
@@ -166,7 +166,7 @@ object FrInfo: TFrInfo
   object Label28: TLabel
     Left = 288
     Top = 494
-    Width = 58
+    Width = 54
     Height = 13
     Caption = 'Status Info:'
   end
