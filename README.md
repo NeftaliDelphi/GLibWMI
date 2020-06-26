@@ -18,7 +18,7 @@ Están basados en la WMI de Windows (Windows Management Instrumentation).
 ## LISTA DE COMPONENTES
 Los componentes se instalan en la paleta de componentes dividivos en 2 categorías (Software y Hardware).
 
-<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/componentes_libreria.png> 
+<img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/componentes_liberia.png> 
 
 A continuación hay una descripción básica de la funcionalidad de cada uno de los componentes.
 
