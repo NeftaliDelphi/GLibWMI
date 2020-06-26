@@ -9,10 +9,10 @@ GLibWMI es una librería/biblioteca de componentes para Delphi, enfocados a la A
 Están basados en la WMI de Windows (Windows Management Instrumentation).  
 Simple, sueltalo y actívalo.
 
-##Lista de componentes de la librería
+## Lista de componentes de la librería
 
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/CBatteryInfo.jpg> 
-- TBIOSInfo: La clase Win32_BIOS representa los atributos del servicio de entrada y salida básico del sistema (BIOS, Basic Input/Output Service) instalado en el equipo.
+- <b>TBIOSInfo:</b> La clase Win32_BIOS representa los atributos del servicio de entrada y salida básico del sistema (BIOS, Basic Input/Output Service) instalado en el equipo.
 https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-bios
 
 <img src=https://neftali.clubdelphi.com/GLibWMI/imagenes/CBatteryInfo.jpg> 
