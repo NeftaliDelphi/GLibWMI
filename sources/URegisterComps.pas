@@ -38,7 +38,6 @@ procedure Register();
 begin
   // Componentes de Hardware
   RegisterComponents(GLIBWMI_PACKAGE_HARD, [
-    TWMISQL,
     TBiosInfo, TDiskDriveInfo, TDiskPartitionInfo,
     TProcessorInfo, TCDROMDriveInfo, TKeyboardInfo,
 	TPrinterInfo, TBatteryInfo, TNetworkAdapterInfo,
@@ -48,7 +47,7 @@ begin
   // Componentes de software
   RegisterComponents(GLIBWMI_PACKAGE_SOFT, [
     TWMISQL,
-    TPrintJobInfo, TOperatingSystemInfo, TProcessInfo, 
+    TPrintJobInfo, TOperatingSystemInfo, TProcessInfo,
 	TServiceInfo, TDesktopMonitorInfo, TEnvironmentInfo,
     TEnvironmentInfo, TComputerSystemInfo, TStartupCommandInfo,
     TUserAccountInfo, TShareInfo, TDisplayConfigurationInfo, 
