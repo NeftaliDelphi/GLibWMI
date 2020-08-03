@@ -3,9 +3,9 @@
 ## DESCRIPCIÓN
 
 ___________________________________________________________________________
-NOTA: ¡Por favor "marque" este proyecto en GitHub! No cuesta nada y ayuda para hacer referencia al código. Gracias.  
+**NOTA**: ¡Por favor "marque" este proyecto en GitHub! No cuesta nada y ayuda para hacer referencia al código. Gracias.  
 
-NOTE: Please "star" (like) this project in GitHub! It's cost nothing but help to reference the code. Thanks.  
+**NOTE**: Please "star" (like) this project in GitHub! It's cost nothing but help to reference the code. Thanks.  
 <img src=https://i.imgur.com/lK6aU2Z.png> 
 ___________________________________________________________________________
 
