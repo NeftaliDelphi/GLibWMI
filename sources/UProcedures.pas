@@ -307,7 +307,7 @@ var
         // Cadena
         Str := Trim(TS[i]);
         index := AnsiPos(Data + CHAR_SPACE + CHAR_EQUAL + CHAR_SPACE, Str);
-        if (index <> 0) then begin
+        if (index = 1) then begin
 
           Str := Copy(Str, index + Length(Data + CHAR_SPACE + CHAR_EQUAL + CHAR_SPACE), Length(Str));
           Str := Trim(Str);
