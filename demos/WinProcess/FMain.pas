@@ -7,11 +7,19 @@ unit FMain;
 //=========================================================================
 interface
 
+{$I .\jedi.inc}
+
 uses
+  {$IFDEF DELPHIX_TOKYO_UP}
+  System.UITypes, System.ImageList, System.Actions, System.Types,
+  Vcl.ImgList,
+  {$ELSE}
+  ImgList,
+  {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ActnList, Menus, CWMIBase, CProcessInfo, Grids,
-  UConst, ImgList, ExtCtrls, ComCtrls,
-  ShellAPI, OI, StdCtrls, XPMenu,
+  UConst,ExtCtrls, ComCtrls,
+  ShellAPI, OI, StdCtrls,
   ComObj;
 
 Type
@@ -138,7 +146,7 @@ Type
   private
     // Componentes externos...
     OI: TMObjectInspector;
-    XPMenu:TXPMenu;
+//    XPMenu:TXPMenu;
 //    mxProcessExport:TmxStringGridExport;
 
     FColumnFilename:string;
@@ -372,8 +380,6 @@ begin
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);
-var
-  i:Integer;
 begin
   // centrar el panel de info
   pnlInfo.Left := (Self.Width - PnlInfo.Width) div 2;
@@ -471,6 +477,7 @@ begin
       if not (ProcessInfo1.Active) then begin
         ProcessInfo1.Active := True;
         props := ProcessInfo1.ProcessProperties;
+
       end;
     end
     else begin
@@ -536,7 +543,6 @@ var
      DY = 2;
    var
      S: array[0..255] of Char;
-     B, R: TRect;
    begin
      with Stringgrid, ACanvas, ARect do
      begin
@@ -710,8 +716,6 @@ end;
 
 
 function TFormMain._GetFileNameColumns: string;
-var
-  str:string;
 begin
   // no se ha calculado todavía
   if (Self.FColumnFilename = STR_EMPTY) then begin
@@ -810,8 +814,6 @@ end;
 
 // Pinta la que toque segun las propiedades de ordenacion.
 procedure TFormMain._PaintArrow(ACol, ARow:Integer; ARect:TRect);
-var
-  i, j:Integer;
 begin
   // Fila no de títulos
   if (ARow <> 0) then begin
@@ -1106,8 +1108,10 @@ begin
   // ini
   OI := nil;
 
+{
   XPMenu := TXPMenu.Create(Self);
   XPMenu.Active := True;
+}
 
   // Crear componente de exportación
 
@@ -1233,39 +1237,36 @@ end;
 procedure TFormMain.Button2Click(Sender: TObject);
 var
   str:string;
-  i:Integer;
 begin
   Str := sgProcess.Cells[3, sgProcess.Row];
-  i := ProcessInfo1.SetPriority('Handle', Str, 128);
+  ProcessInfo1.SetPriority('Handle', Str, 128);
 end;
 
 procedure TFormMain.Button3Click(Sender: TObject);
 var
   i:Integer;
 begin
-  i := ProcessInfo1.Create_('', '', 'c:\WINDOWS\NOTEPAD.EXE ', STR_EMPTY, '', i);
+  i := ProcessInfo1.Create_('', '', 'c:\WINDOWS\NOTEPAD.EXE ', STR_EMPTY, '', 0);
   MessageDlg('Resultado; PID=' + IntToStr(i), mtInformation, [mbOK], 0);
 end;
 
 procedure TFormMain.Button4Click(Sender: TObject);
 var
   str:string;
-  i:Integer;
   AUsuario, ADominio:string;
 begin
   Str := sgProcess.Cells[3, sgProcess.Row];
-  i := ProcessInfo1.GetOwner('Handle', Str, AUsuario, ADominio);
+  ProcessInfo1.GetOwner('Handle', Str, AUsuario, ADominio);
   MessageDlg('Pertenece a: ' + ADominio + ' | ' + AUsuario, mtInformation, [mbOK], 0);
 end;
 
 procedure TFormMain.Button5Click(Sender: TObject);
 var
   str:string;
-  i:Integer;
   SID:string;
 begin
   Str := sgProcess.Cells[3, sgProcess.Row];
-  i := ProcessInfo1.GetOwnerSID('Handle' , Str, SID);
+  ProcessInfo1.GetOwnerSID('Handle' , Str, SID);
   MessageDlg('Pertenece a: ' + SID, mtInformation, [mbOK], 0);
 
 end;
@@ -1386,7 +1387,6 @@ procedure TFormMain.ActionTerminarExecute(Sender: TObject);
 var
   i, res:Integer;
   Str:string;
-  h:HWND;
   cap, Str1, Str2:string;
 begin
 
@@ -1409,7 +1409,7 @@ begin
   if (res = idYes) then begin
     // Matar el proceso
     Str := sgProcess.Cells[3{colHandle.Index}, i];
-    h := StrToIntDef(Str, 0);
+    StrToIntDef(Str, 0);
 //    // Correcto
 //    if (h > 0) then begin
 //      ProcessInfo1.Terminate('Handle', Str, 0);
@@ -1434,9 +1434,6 @@ end;
 procedure TFormMain.RetrieveConfigs();
 var
   path:string;
-  b:Boolean;
-  str:string;
-  i:Integer;
 begin
 
   path := ConfigFilePath();
@@ -1471,7 +1468,6 @@ end;
 procedure TFormMain.SaveConfigs;
 var
   path:string;
-  Str:String;
 begin
 
   path := ConfigFilePath();

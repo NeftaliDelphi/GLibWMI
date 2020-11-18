@@ -7,8 +7,9 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, ImgList, ComCtrls, StdCtrls,
-  {$IFDEF DELPHIX_TOKYO_UP} System.ImageList, Vcl.CheckLst, {$ELSE}
-  CheckLst,
+  {$IFDEF DELPHIX_TOKYO_UP} System.ImageList, Vcl.CheckLst,
+  {$ELSE}
+  CheckLst, ImageList,
   {$ENDIF}
   CWMIBase, CPrinterInfo;
 
@@ -87,8 +88,7 @@ end;
 procedure TFormMain.FillData;
 var
   TS:tStrings;
-  str:String;
-  i, index:integer;
+  i:integer;
 begin
   // Seleccionada
   ActualPrinter := PrinterInfo.PrinterProperties.Caption;

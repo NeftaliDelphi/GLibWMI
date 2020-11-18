@@ -475,7 +475,7 @@ type
     /// </summary>
     function GetOwner(AInstanceProp:string; AInstanceValue:Variant;
       aDomain:string;
-      aUser:string):integer;
+      aUser:string):integer; reintroduce;
     /// <summary>
     ///  El método GetOwnerSid recupera el identificador de seguridad (SID) para el 
     ///  propietario del proceso.

@@ -13,6 +13,8 @@ unit OI;
 
 interface
 
+{$I .\..\package\jedi.inc}
+
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, TypInfo;
 
@@ -40,14 +42,14 @@ type
   private
     FOnException :texceptionevent;
     FObject: TObject;
-    FCompName :shortstring;
+    FCompName :string;
     FAbout,FCompType :string;
     FFilter: TTypeKinds;
     FPropList : TPropInfoList;
     FProperties, FTypes, FValues, FDecl, s, sl :TStringList;
     FOwner :tcomponent;
     FKinds: TStringList;
-    FRecurse: boolean;
+    //FRecurse: boolean;
     function EvalIntegerProperty(PropInfo: PPropInfo): string;
     function EvalInt64Property(PropInfo: PPropInfo): string;
     function EvalCharProperty(PropInfo: PPropInfo): string;
@@ -77,13 +79,13 @@ type
     procedure ModifyStringsProperty(const S: tstringlist; PropInfo: PPropInfo);
     procedure ModifyClassProperty(const S: tstringlist; PropInfo: PPropInfo);
     procedure ModifyAnyProperty(const S: tstringlist; PropInfo: PPropInfo); overload;
-    procedure ModifyAnyProperty(const S: string; PropInfo: PPropInfo); overload;
+    // procedure ModifyAnyProperty(const S: string; PropInfo: PPropInfo); overload;
     procedure ModifyMethodProperty(AMethod: TMethod; PropInfo: PPropInfo);
 
     function FindComponentEx(Componentname :string) :tcomponent;
     function GetComp: TComponent;
     procedure SetComp(const Value: TComponent);
-    procedure SetRecurse(const Value: boolean);
+    //procedure SetRecurse(const Value: boolean);
     procedure SetObject(value :tobject);
     procedure SetFilter(value :ttypekinds);
     procedure SetNone(value :string);
@@ -91,13 +93,13 @@ type
   public
     constructor Create(AOwner:TComponent); override;
     destructor Destroy; override;
-    procedure GetPropertyValue(Propertyname :shortstring; var sl :tstringlist);
-    function GetPropertyType(Propertyname :shortstring) :string;
-    function SetPropertyValue(Propertyname :shortstring; sl :tstringlist) :Boolean; overload;
-    function SetPropertyValue(Propertyname :shortstring; value :string) :Boolean; overload;
-    function SetEventValue(Eventname :shortstring; M: TMethod) :Boolean;
-    function GetProperty(Propertyname :shortstring) :PPropInfo;
-    function GetMethodDecl(Propertyname :shortstring) :string;
+    procedure GetPropertyValue(Propertyname :string; var sl :tstringlist);
+    function GetPropertyType(Propertyname :string) :string;
+    function SetPropertyValue(Propertyname :string; sl :tstringlist) :Boolean; overload;
+    function SetPropertyValue(Propertyname :string; value :string) :Boolean; overload;
+    function SetEventValue(Eventname :string; M: TMethod) :Boolean;
+    function GetProperty(Propertyname :string) :PPropInfo;
+    function GetMethodDecl(Propertyname :string) :string;
     property Obj: TObject read FObject write SetObject;
   published
     property About :string read fabout write setnone;
@@ -109,7 +111,7 @@ type
     property Kinds :TStringList read FKinds;
     property Declarations :TStringList read FDecl;
     property ObjectType :string read FCompType;
-    property ObjectName :shortstring read FCompName;
+    property ObjectName :string read FCompName;
     property OnException :TExceptionEvent read FOnException write SetOnExc;
   end;
 
@@ -179,24 +181,46 @@ begin
   I := 1;
   SLen := Length(S);
   while I <= SLen do begin
+    {$IFDEF DELPHIX_TOKYO_UP}
+    while (I <= SLen) and CharInSet(S[I], WordDelims) do Inc(I);
+    {$ELSE}
     while (I <= SLen) and (S[I] in WordDelims) do Inc(I);
+    {$ENDIF}
     if I <= SLen then Inc(Result);
+
+    {$IFDEF DELPHIX_TOKYO_UP}
+    while (I <= SLen) and not CharInSet(S[I], WordDelims) do Inc(I);
+    {$ELSE}
     while (I <= SLen) and not(S[I] in WordDelims) do Inc(I);
+    {$ENDIF}
+
   end;
 end;
 
 function WordPosition(const N: Integer; const S: string; WordDelims: TCharSet): Integer;
 var
-  Count, I: Cardinal;
+  Count, I: integer;
 begin
   Count := 0;
   I := 1;
   Result := 0;
   while (I <= Length(S)) and (Count <> N) do begin
+    {$IFDEF DELPHIX_TOKYO_UP}
+    while (I <= Length(S)) and CharInSet(S[I], WordDelims) do Inc(I);
+    {$ELSE}
     while (I <= Length(S)) and (S[I] in WordDelims) do Inc(I);
+    {$ENDIF}
+
+
     if I <= Length(S) then Inc(Count);
     if Count <> N then
+
+    {$IFDEF DELPHIX_TOKYO_UP}
+      while (I <= Length(S)) and not CharInSet(S[I], WordDelims) do Inc(I)
+    {$ELSE}
       while (I <= Length(S)) and not (S[I] in WordDelims) do Inc(I)
+    {$ENDIF}
+
     else Result := I;
   end;
 end;
@@ -209,7 +233,12 @@ begin
   Len := 0;
   I := WordPosition(N, S, WordDelims);
   if I <> 0 then
+    {$IFDEF DELPHIX_TOKYO_UP}
+    while (I <= Length(S)) and not CharInSet(S[I], WordDelims) do begin
+    {$ELSE}
     while (I <= Length(S)) and not(S[I] in WordDelims) do begin
+    {$ENDIF}
+
       Inc(Len);
       SetLength(Result, Len);
       Result[Len] := S[I];
@@ -239,7 +268,7 @@ var
 begin
   for I := 0 to FCount - 1 do
     with FList^[I]^ do
-      if (PropType = P^.PropType) and (CompareText(Name, P^.Name) = 0) then
+      if (PropType = P^.PropType) and (CompareText(string(Name), string(P^.Name)) = 0) then
       begin
         Result := True;
         Exit;
@@ -253,7 +282,7 @@ var
 begin
   for I := 0 to FCount - 1 do
     with FList^[I]^ do
-      if (CompareText(Name, AName) = 0) then
+      if (CompareText(string(Name), string(AName)) = 0) then
       begin
         Result := FList^[I];
         Exit;
@@ -330,8 +359,9 @@ begin
           tkVariant: s.add(EvalVariantProperty(PropInfo));
           tkString: s.add(EvalStringProperty(PropInfo));
 
-          {$IFDEF VER190}
-          tkUString: s.add(EvalStringProperty(PropInfo));
+          //+G  Added type
+          {$IFNDEF VER140}
+//          tkUString: s.add(EvalStringProperty(PropInfo));
           {$ENDIF}
 
           tkSet: s.add(EvalSetProperty(PropInfo));
@@ -494,8 +524,8 @@ begin
       result:='procedure '
     else
       result:='function ';
-    result:=result+propinfo^.name;
-    s:=(t^.paramlist);
+    result:=result+string(propinfo^.name);
+    s:=string((t^.paramlist));
     f:=s[1];
     s:=copy(s,2,length(s));
     l:='';
@@ -532,6 +562,7 @@ begin
     SetOrdProp(FObject, PropInfo, StrToIntDef(S, 0));
 end;
 
+{
 procedure TMObjectInspector.ModifyAnyProperty(const S: string;
   PropInfo: PPropInfo);
 begin
@@ -557,6 +588,7 @@ begin
     end;
   end;
 end;
+}
 
 procedure TMObjectInspector.ModifyCharProperty;
 begin
@@ -747,8 +779,8 @@ begin
           fvalues.add('(TStrings)')
         else
           fvalues.add(s[0]);
-        fproperties.add(fPropList.items[I]^.name);
-        ftypes.add(fPropList.items[I]^.proptype^.name);
+        fproperties.add(string(fPropList.items[I]^.name));
+        ftypes.add(String(fPropList.items[I]^.proptype^.name));
         fkinds.Add(IntToStr(Integer(fPropList.items[I]^.proptype^.Kind)));
         if fPropList.items[I]^.proptype^.kind=tkmethod then
           fdecl.add(getmethoddeclaration(fPropList.items[I]));
@@ -763,7 +795,7 @@ begin
   ffilter:=value;
 end;
 
-function TMObjectInspector.SetPropertyValue(Propertyname :shortstring; sl :tstringlist) :Boolean;
+function TMObjectInspector.SetPropertyValue(Propertyname :string; sl :tstringlist) :Boolean;
 var
   p :ppropinfo;
 begin
@@ -786,7 +818,7 @@ begin
   fonexception:=value;
 end;
 
-function TMObjectInspector.SetPropertyValue(Propertyname: shortstring;
+function TMObjectInspector.SetPropertyValue(Propertyname: string;
   value: string): Boolean;
 var
   p :ppropinfo;
@@ -799,11 +831,13 @@ begin
   end;
 end;
 
+{
 procedure TMObjectInspector.SetRecurse(const Value: boolean);
 begin
   FRecurse:=Value;
   Obj:=FObject;
 end;
+}
 
 procedure TMObjectInspector.GetPropertyValue;
 var
@@ -820,7 +854,7 @@ var
 begin
   p:=fproplist.find(propertyname);
   if assigned(p) then
-    result:=p^.proptype^.name
+    result:=string(p^.proptype^.name)
   else
     result:='';
 end;
@@ -850,12 +884,12 @@ begin
 end;
 
 procedure TMObjectInspector.ModifyMethodProperty;
-var
-  Obj, New: TObject;
-  t :ptypedata;
+//var
+  // Obj, New: TObject;
+  // t :ptypedata;
 begin
-  Obj:=TObject(GetOrdProp(Self.FObject, PropInfo));
-  t:=gettypedata(propinfo^.PropType^);
+  // Obj:=TObject(GetOrdProp(Self.FObject, PropInfo));
+  gettypedata(propinfo^.PropType^);
   SetMethodProp(self.fobject,propinfo,AMethod);
 end;
 
