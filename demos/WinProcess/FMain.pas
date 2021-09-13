@@ -7,7 +7,7 @@ unit FMain;
 //=========================================================================
 interface
 
-{$I .\jedi.inc}
+{$I .\..\..\jedi.inc}
 
 uses
   {$IFDEF DELPHIX_TOKYO_UP}
