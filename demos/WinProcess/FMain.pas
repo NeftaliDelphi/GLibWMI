@@ -7,11 +7,11 @@ unit FMain;
 //=========================================================================
 interface
 
-{$I .\..\..\jedi.inc}
+{$I .\jedi.inc}
 
 uses
   {$IFDEF DELPHIX_TOKYO_UP}
-  System.UITypes, System.ImageList, System.Actions, System.Types,
+  System.UITypes, System.Types,
   Vcl.ImgList,
   {$ELSE}
   ImgList,
@@ -20,7 +20,7 @@ uses
   Dialogs, ActnList, Menus, CWMIBase, CProcessInfo, Grids,
   UConst,ExtCtrls, ComCtrls,
   ShellAPI, OI, StdCtrls,
-  ComObj;
+  ComObj, System.ImageList, System.Actions;
 
 Type
   //: Tipo de Dat de la columna por la que queremos ordenar.

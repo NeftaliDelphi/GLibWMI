@@ -5,10 +5,10 @@ interface
 {$I .\..\..\package\jedi.inc}
 
 uses
-  {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, System.ImageList, System.Actions, {$ENDIF}
+  {$IFDEF DELPHIX_TOKYO_UP} System.UITypes, {$ENDIF}
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ActnList, ComCtrls, ToolWin, StdCtrls, ExtCtrls, ImgList,
-  Buttons, CWMIBase, CBiosInfo, CheckLst;
+  Buttons, CWMIBase, CBiosInfo, CheckLst, System.ImageList, System.Actions;
 
 // Mensages
 const
