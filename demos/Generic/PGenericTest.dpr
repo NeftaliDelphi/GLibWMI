@@ -4,7 +4,8 @@ uses
   Forms,
   FrComponent in 'FrComponent.pas' {FrameComponent: TFrame},
   UMainTest2Col in 'UMainTest2Col.pas' {FormMain},
-  FormAbout in '..\..\sources\FormAbout.pas' {FAbout};
+  FormAbout in '..\..\sources\FormAbout.pas' {FAbout},
+  OI in 'OI.PAS';
 
 {$R *.res}
 

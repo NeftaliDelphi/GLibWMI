@@ -31,7 +31,7 @@ begin
     'Fabricante: ' + p.Manufacturer + sLineBreak +
     'Modelo: ' + p.Model + sLineBreak +
     'Familia: ' + p.SystemFamily + sLineBreak +
-    'Tipo de sistema: ' + p.GetAllSystemTypeAsString(StrToInt(p.SystemType)) + sLineBreak;
+    'Tipo de sistema: ' + p.SystemType + sLineBreak;
 
 
     
