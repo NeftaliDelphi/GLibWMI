@@ -1,5 +1,5 @@
 {
-TProcessorInfo Component Version 3.0 - Suite GLibWMI
+TProcessorInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 La clase Win32_Processor representa un dispositivo capaz de interpretar una secuencia de instrucciones 

@@ -1,5 +1,5 @@
 {
-TProductInfo Component Version 3.0 - Suite GLibWMI
+TProductInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 Las instancias de esta clase representan productos instalados por MSI. Por lo general, un producto suele 

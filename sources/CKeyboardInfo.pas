@@ -1,5 +1,5 @@
 {
-TKeyboardInfo Component Version 3.0 - Suite GLibWMI
+TKeyboardInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 La clase Win32_Keyboard representa un teclado instalado en un sistema Win32.

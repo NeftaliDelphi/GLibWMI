@@ -1,5 +1,5 @@
 {
-TEnvironmentInfo Component Version 3.0 - Suite GLibWMI
+TEnvironmentInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 La clase Win32_Environment representa una configuración de entorno o de sistema en un sistema Win32.

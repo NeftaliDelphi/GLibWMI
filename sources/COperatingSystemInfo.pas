@@ -1,5 +1,5 @@
 {
-TOperatingSystemInfo Component Version 3.0 - Suite GLibWMI
+TOperatingSystemInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 La clase Win32_OperatingSystem representa un sistema operativo instalado en un sistema Win32. Los sistemas 

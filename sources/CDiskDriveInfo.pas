@@ -1,5 +1,5 @@
 {
-TDiskDriveInfo Component Version 3.0 - Suite GLibWMI
+TDiskDriveInfo Component Version 3.1 - Suite GLibWMI
 Copyright (©) 2020,  by Germán Estévez (Neftalí)
 
 La clase Win32_DiskDrive representa una unidad física de disco tal y como la percibe un equipo donde 
