@@ -357,7 +357,7 @@ begin
           tkLString: s.add(EvalLStringProperty(PropInfo));
           tkWChar: s.add(EvalWCharProperty(PropInfo));
           tkVariant: s.add(EvalVariantProperty(PropInfo));
-          tkString: s.add(EvalStringProperty(PropInfo));
+          tkString, tkUstring, tkWString: s.add(EvalStringProperty(PropInfo));
 
           //+G  Added type
           {$IFNDEF VER140}
