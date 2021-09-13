@@ -1,0 +1,17 @@
+GLibWMI Component Library 
+
+Historial de la versión 3.1
+13/09/2021
+===========================================================
+
+* Añadido soporte para Delphi 11
+* Corregidos algunos bugs en la demo general, al mostrar propiedades
+
+
+Acerca de...
+===========================================================
+Copyright © Germán Estévez (Neftalí). Todos los derechos reservados.
+german_ral@hotmail.com
+Futuras versiones del componente en:
+http://neftali.clubdelphi.com/
+
